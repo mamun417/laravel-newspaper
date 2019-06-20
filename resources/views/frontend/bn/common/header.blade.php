@@ -4,12 +4,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <a href="{{ url('/') }}" class="lg-logo">
-                        <img src="{{ asset(config('appconfig.commonImagePath').'logo.png') }}" alt="Logo" style="width:270px;margin-left:-20px;margin-top:15px;">
-                    </a>
-                </div>
-                <div class="col-sm-8 text-right">
-                    <a href="">
-                        <img src="https://tpc.googlesyndication.com/simgad/6536448195093582478" alt="Advertisement">
+                        <img src="{{ asset(config('appconfig.commonImagePath').'logo.png') }}" alt="Logo" style="width:270px;margin-left:-20px;">
                     </a>
                 </div>
             </div>

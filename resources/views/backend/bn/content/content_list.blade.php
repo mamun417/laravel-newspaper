@@ -94,9 +94,9 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>News Heading</th>
+                  <th style="width: 400px;">News Heading</th>
                   <th style="width: 200px;">Category</th>
-                  <th style="width: 190px;">News Situation</th>
+                  <th style="width: 290px;">News Situation</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -107,8 +107,8 @@
                       <td><a href="{{ fDesktopURL($content->content_id, $content->category->cat_slug, (!is_null($content->subcategory) ? $content->subcategory->subcat_slug : null), $content->content_type) }}" target="_blank">{{ $content->content_heading }}</a></td>
                     <td>
                       <a href="#">{{ $content->category->cat_name_bn or '' }}</a><br/>
-                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn or '' }}</a><br/>
-                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn or '' }}</a>
+{{--                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn or '' }}</a><br/>--}}
+{{--                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn or '' }}</a>--}}
                     </td>
                     <td>
                       Insert: <span class="badge label-success">{{ $content->created_at }}</span><br/>
@@ -120,6 +120,7 @@
                                 <span class="badge label-danger"><i class="fa fa-close"></i></span>
                             @endif
                       Total Hit: <span class="badge label-default">{{ $content->total_hit }}</span>                            
+                      Updated by : <span class="badge label-default">{{ $content->uploader_id }}</span>
                     </td>
                     <td>
                         <a href="{{ action('BnContentController@edit', $content->content_id) }}" class="btn btn-warning btn-xs">
