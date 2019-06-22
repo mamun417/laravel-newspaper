@@ -109,7 +109,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-6">
                                     <button type="submit" class="btn btn-info">Update</button>
-                                    <a href="{{ URL::previous() }}" class="btn btn-default">Back</a>
+                                    <a href="{{ url()->previous() }}" type="button" class="btn btn-default">Cancel</a>
                                 </div>
                             </div>
                         </div>
