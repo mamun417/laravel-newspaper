@@ -31,7 +31,7 @@
               <a href="{{ url('backend/bn-contents') }}"><i class="fa fa-file-o"></i> News list</a>
             </li>
             <li class="{{ $cur_route_name == 'bn-content-position.index' || $cur_route_name == 'bn-content-position.create' || $cur_route_name == 'bn-content-position.edit'? 'active':'' }}">
-              <a href="{{ url('backend/bn-content-position') }}"><i class="fa fa-file-o"></i> News position</a>
+              <a href="{{ url('backend/bn-content-position/change/1') }}"><i class="fa fa-file-o"></i> News position</a>
             </li>
           </ul>
         </li>
@@ -50,7 +50,7 @@
               <a href="{{ url('backend/en-contents') }}"><i class="fa fa-file-o"></i> English News list</a>
             </li>
             <li class="{{ $cur_route_name == 'en-content-position.index' || $cur_route_name == 'en-content-position.create' || $cur_route_name == 'en-content-position.edit'? 'active':'' }}">
-              <a href="{{ url('backend/en-content-position') }}"><i class="fa fa-file-o"></i> English News position</a>
+              <a href="{{ url('backend/en-content-position/change/3') }}"><i class="fa fa-file-o"></i> English News position</a>
             </li>
           </ul>
         </li>
