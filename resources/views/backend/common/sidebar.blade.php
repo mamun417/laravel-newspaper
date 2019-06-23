@@ -18,7 +18,7 @@
         </li>
         <li class="treeview {{ $cur_controller_name == 'BnContentController' || $cur_controller_name == 'BnContentPositionController'?'active':'' }}">
           <a href="#">
-            <i class="fa fa-file-o"></i> <span>Bangla News OK</span>
+            <i class="fa fa-file-o"></i> <span>Bangla News</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
