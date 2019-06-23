@@ -197,7 +197,6 @@ class EnContentController extends Controller
         }
         $content->upozilla_id = $request->upozilla;
         $content->uploader_id = $request->uploader;
-        $content->updated_by = auth()->user()->id;
         if ($request->prevNewsIds) $content->related_ids = implode(',', $request->prevNewsIds);
         if ($request->photoGalaryIds) $content->photo_ids = implode(',', $request->photoGalaryIds);
         $content->video_type = $request->videoType;

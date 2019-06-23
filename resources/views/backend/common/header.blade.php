@@ -2,7 +2,7 @@
     <!-- Logo -->
     <a href="{{ url('/backend/dashboard') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">DP</span>
+      <span class="logo-mini">USA Bangla</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">{{ Cache::get('bnSiteSettings')->site_name }}</span>
     </a>

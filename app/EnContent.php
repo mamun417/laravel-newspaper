@@ -34,4 +34,8 @@ class EnContent extends Model
     public function misUser(){
         return $this->belongsTo('App\MisUser', 'updated_by', 'user_id')->where('deletable', 1);
     }
+
+    public function misUserName(){
+        return $this->belongsTo('App\MisUser', 'uploader_id', 'user_id')->where('deletable', 1);
+    }
 }

@@ -120,7 +120,12 @@
                                 <span class="badge label-danger"><i class="fa fa-close"></i></span>
                             @endif
                       Total Hit: <span class="badge label-default">{{ $content->total_hit }}</span>
-                      Updated by : <span class="badge label-default">{{ $content->misUser->user_name ?? '' }}</span>
+                        @if($content->updated_by == 0)
+                            Submitted by : <span class="badge label-default">{{ $content->misUserName->user_name ?? '' }}</span>
+                        @else
+                            Updated by : <span class="badge label-default">{{ $content->misUser->user_name ?? '' }}</span>
+                        @endif
+
                     </td>
                     <td>
                         <a href="{{ action('EnContentController@edit', $content->content_id) }}" class="btn btn-warning btn-xs">
