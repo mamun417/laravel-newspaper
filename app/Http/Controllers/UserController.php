@@ -25,8 +25,8 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'designation' => 'required',
-            'email' => 'required|unique:users',
-            'username' => 'required|unique:users',
+            'email' => 'required|unique:mysql.users',
+            'username' => 'required|unique:mysql.users',
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required',
 
@@ -61,8 +61,8 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'designation' => 'required',
-            'email' => 'required|unique:users,email,'.$id,
-            'username' => 'required|unique:users,username,'.$id,
+            'email' => 'required|unique:mysql.users,email,'.$id,
+            'username' => 'required|unique:mysql.users,username,'.$id,
         ]);
 
         $user = User::find($id);

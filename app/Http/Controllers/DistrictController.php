@@ -22,7 +22,7 @@ class DistrictController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['district_name' => 'required|unique:districts']);
+        $this->validate($request, ['district_name' => 'required|unique:mysql.districts']);
 
         $district = new District();
         $district->division_id      = $request->division;

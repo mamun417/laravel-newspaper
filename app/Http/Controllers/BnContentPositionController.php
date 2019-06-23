@@ -23,7 +23,7 @@ class BnContentPositionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'position_name' => 'required|unique:bn_content_positions'
+            'position_name' => 'required|unique:mysql.bn_content_positions'
         ]);
 
         $news_position = new BnContentPosition();

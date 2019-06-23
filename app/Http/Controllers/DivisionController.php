@@ -20,7 +20,7 @@ class DivisionController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['division_name' => 'required|unique:divisions']);
+        $this->validate($request, ['division_name' => 'required|unique:mysql.divisions']);
 
         $division = new Division();
         $division->division_name    = $request->division_name;

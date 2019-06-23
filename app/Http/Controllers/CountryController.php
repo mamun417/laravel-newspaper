@@ -20,7 +20,7 @@ class CountryController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['country_name' => 'required|unique:countries']);
+        $this->validate($request, ['country_name' => 'required|unique:mysql.countries']);
 
         $country = new Country();
         $country->country_name      = $request->country_name;

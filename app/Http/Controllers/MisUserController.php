@@ -22,8 +22,8 @@ class MisUserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'user_name' => 'required|unique:mis_users',
-            'user_initial' => 'required|unique:mis_users'
+            'user_name' => 'required|unique:mysql.mis_users',
+            'user_initial' => 'required|unique:mysql.mis_users'
         ]);
 
         $user = new MisUser();
