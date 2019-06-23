@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/jquery-ui.css') }}">
     <style>
         .ui-widget.ui-widget-content{max-height: 500px; overflow-y: scroll; overflow-x: hidden;}
-        .item{list-style: none; background: lightgray; padding: 5px; margin: 2px 0; width: 500px; cursor: move;}
+        .item{list-style: none; background: lightgray; padding: 5px; margin: 2px 0; cursor: move;}
     </style>
 @endsection
 
