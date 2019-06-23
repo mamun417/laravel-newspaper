@@ -21,8 +21,8 @@ class BnTagController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'tagName' => 'required|unique:bn_tags,tag_name',
-            'tagSlug' => 'required|unique:bn_tags,tag_slug'
+            'tagName' => 'required|unique:mysql.bn_tags,tag_name',
+            'tagSlug' => 'required|unique:mysql.bn_tags,tag_slug'
         ]);
 
         $tag = new BnTag();
@@ -49,8 +49,8 @@ class BnTagController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'tagName' => 'required|unique:bn_tags,tag_name,'.$id.',tag_id',
-            'tagSlug' => 'required|unique:bn_tags,tag_slug,'.$id.',tag_id'
+            'tagName' => 'required|unique:mysql.bn_tags,tag_name,'.$id.',tag_id',
+            'tagSlug' => 'required|unique:mysql.bn_tags,tag_slug,'.$id.',tag_id'
         ]);
 
         $tag = BnTag::find($id);

@@ -26,7 +26,7 @@ class MonthlyFolderController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, ['folder_name' => 'required|unique:monthly_folders']);
+        $this->validate($request, ['folder_name' => 'required|unique:mysql.monthly_folders']);
 
         $folder = new MonthlyFolder();
         $folder->folder_name = $request->folder_name;

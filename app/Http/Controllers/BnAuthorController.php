@@ -28,8 +28,8 @@ class BnAuthorController extends Controller
         $this->validate($request, [
             'author_name'       => 'required',
             'author_name_bn'    => 'required',
-            'author_slug'       => 'required|unique:authors',
-            'author_initial'    => 'required|unique:authors',
+            'author_slug'       => 'required|unique:mysql.authors',
+            'author_initial'    => 'required|unique:mysql.authors',
             'author_initial_bn' => 'required',
             'author_image'      => 'mimes:jpg,jpeg,png|max:100'
         ]);
@@ -67,10 +67,10 @@ class BnAuthorController extends Controller
     {
         $this->validate($request, [
             'author_name'       => 'required',
-            'author_slug'       => 'required|unique:authors,author_slug,'.$id.',author_id',
+            'author_slug'       => 'required|unique:mysql.authors,author_slug,'.$id.',author_id',
             'author_name_bn'    => 'required',
-            'author_initial'    => 'required|unique:authors,author_initial,'.$id.',author_id',
-            'author_initial_bn' => 'required|unique:authors,author_initial_bn,'.$id.',author_id',
+            'author_initial'    => 'required|unique:mysql.authors,author_initial,'.$id.',author_id',
+            'author_initial_bn' => 'required|unique:mysql.authors,author_initial_bn,'.$id.',author_id',
             'author_image'      => 'mimes:jpg,jpeg,png|max:100'
         ]);
 

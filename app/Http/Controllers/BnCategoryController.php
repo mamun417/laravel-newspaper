@@ -21,8 +21,8 @@ class BnCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'categoryName'      => 'required|unique:bn_categories,cat_name',
-            'categoryNameBn'    => 'required|unique:bn_categories,cat_name_bn'
+            'categoryName'      => 'required|unique:mysql.bn_categories,cat_name',
+            'categoryNameBn'    => 'required|unique:mysql.bn_categories,cat_name_bn'
         ]);
 
         $category = new BnCategory();
@@ -51,8 +51,8 @@ class BnCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'categoryName'      => 'required|unique:bn_categories,cat_name,'.$id.',cat_id',
-            'categoryNameBn'    => 'required|unique:bn_categories,cat_name_bn,'.$id.',cat_id'
+            'categoryName'      => 'required|unique:mysql.bn_categories,cat_name,'.$id.',cat_id',
+            'categoryNameBn'    => 'required|unique:mysql.bn_categories,cat_name_bn,'.$id.',cat_id'
         ]);
 
         $category = BnCategory::find($id);
