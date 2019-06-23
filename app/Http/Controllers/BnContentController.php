@@ -183,6 +183,7 @@ class BnContentController extends Controller
 //        }
 
         $content->content_type = $request->contentType;
+        $content->lead_news = $request->leadNews;
         $content->cat_id = $request->category;
         $content->subcat_id = $request->subCategory;
         $content->special_cat_id = $request->specialCategory;
@@ -193,6 +194,7 @@ class BnContentController extends Controller
         }
         $content->upozilla_id = $request->upozilla;
         $content->uploader_id = $request->uploader;
+        $content->updated_by = auth()->user()->id;
         if ($request->prevNewsIds) $content->related_ids = implode(',', $request->prevNewsIds);
         if ($request->photoGalaryIds) $content->photo_ids = implode(',', $request->photoGalaryIds);
         $content->video_type = $request->videoType;
@@ -269,6 +271,7 @@ class BnContentController extends Controller
             }
         }
         //return $categories;
+        //dd($content->toArray());
 
         return view('backend.bn.content.content_edit', compact('content', 'authors', 'categories', 'specialCategories', 'countries', 'districts', 'mis_uploaders', 'normaltag_list', 'peopletag_list', 'placetag_list'));
     }
@@ -385,6 +388,7 @@ class BnContentController extends Controller
 //        }
 
         $content->content_type = $request->contentType;
+        $content->lead_news = $request->leadNews;
         $content->cat_id = $request->category;
         $content->subcat_id = $request->subCategory;
         $content->special_cat_id = $request->specialCategory;
@@ -395,6 +399,7 @@ class BnContentController extends Controller
         }
         $content->upozilla_id = $request->upozilla;
         $content->uploader_id = $request->uploader;
+        $content->updated_by = auth()->user()->id;
         if ($request->prevNewsIds) $content->related_ids = implode(',', $request->prevNewsIds);
         if ($request->photoGalaryIds) $content->photo_ids = implode(',', $request->photoGalaryIds);
         $content->video_type = $request->videoType;

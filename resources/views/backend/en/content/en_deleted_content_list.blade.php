@@ -40,11 +40,11 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>News Heading</th>
-                  <th style="width: 200px;">Category</th>
-                  <th style="width: 190px;">News Situation</th>
-                  <th>Actions</th>
+                  <th style="width: 5%;">ID</th>
+                  <th style="width: 30%;">News Heading</th>
+                  <th style="width: 15%;">Category</th>
+                  <th style="width: 35%;">News Situation</th>
+                  <th style="width: 15%;">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,8 +54,8 @@
                     <td>{{ $content->content_heading }}</td>
                     <td>
                       <a href="#">{{ $content->category->cat_name_bn }}</a><br/>
-                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn or '' }}</a><br/>
-                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn or '' }}</a>
+                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn ?? '' }}</a><br/>
+                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn ?? '' }}</a>
                     </td>
                     <td>
                       Insert: <span class="badge label-success">{{ $content->created_at }}</span><br/>

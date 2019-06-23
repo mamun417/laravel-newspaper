@@ -30,4 +30,8 @@ class EnContent extends Model
     public function comments(){
         return $this->hasMany('App\EnComment', 'content_id', 'content_id')->where('approval', 2);
     }
+
+    public function misUser(){
+        return $this->belongsTo('App\MisUser', 'updated_by', 'user_id')->where('deletable', 1);
+    }
 }

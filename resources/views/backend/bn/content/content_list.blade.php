@@ -93,11 +93,11 @@
             <table class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th style="width: 400px;">News Heading</th>
-                  <th style="width: 200px;">Category</th>
-                  <th style="width: 290px;">News Situation</th>
-                  <th>Actions</th>
+                  <th style="width: 5%;">ID</th>
+                  <th style="width: 30%;">News Heading</th>
+                  <th style="width: 15%;">Category</th>
+                  <th style="width: 35%;">News Situation</th>
+                  <th style="width: 15%;">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -106,9 +106,9 @@
                     <td>{{ $content->content_id }}</td>
                       <td><a href="{{ fDesktopURL($content->content_id, $content->category->cat_slug, (!is_null($content->subcategory) ? $content->subcategory->subcat_slug : null), $content->content_type) }}" target="_blank">{{ $content->content_heading }}</a></td>
                     <td>
-                      <a href="#">{{ $content->category->cat_name_bn or '' }}</a><br/>
-{{--                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn or '' }}</a><br/>--}}
-{{--                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn or '' }}</a>--}}
+                      <a href="#">{{ $content->category->cat_name_bn ?? '' }}</a><br/>
+                      Sub Category: <a href="" class="badge label-success">{{ $content->subCategory->subcat_name_bn ?? '' }}</a><br/>
+                      Special Category: <a href="" class="badge label-primary">{{ $content->specialCategory->cat_name_bn ?? '' }}</a>
                     </td>
                     <td>
                       Insert: <span class="badge label-success">{{ $content->created_at }}</span><br/>
@@ -120,7 +120,7 @@
                                 <span class="badge label-danger"><i class="fa fa-close"></i></span>
                             @endif
                       Total Hit: <span class="badge label-default">{{ $content->total_hit }}</span>                            
-                      Updated by : <span class="badge label-default">{{ $content->uploader_id }}</span>
+                      Updated by : <span class="badge label-default">{{ $content->misUser->user_name ?? '' }}</span>
                     </td>
                     <td>
                         <a href="{{ action('BnContentController@edit', $content->content_id) }}" class="btn btn-warning btn-xs">
