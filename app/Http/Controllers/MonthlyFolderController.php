@@ -28,10 +28,6 @@ class MonthlyFolderController extends Controller
     {
         $this->validate($request, ['folder_name' => 'required|unique:mysql.monthly_folders']);
 
-        if(File::exists(config('appconfig.contentImagePath').$request->folder_name)) {
-            dd('folder exits');
-        }
-
         $folder = new MonthlyFolder();
         $folder->folder_name = $request->folder_name;
         File::makeDirectory(config('appconfig.contentImagePath').$request->folder_name, 0755);
@@ -57,10 +53,6 @@ class MonthlyFolderController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, ['folder_name' => 'required']);
-
-        if(File::exists(config('appconfig.contentImagePath').$request->folder_name)) {
-            dd('folder exits');
-        }
 
         $folder = MonthlyFolder::find($id);
         $folder->folder_name = $request->folder_name;
