@@ -230,10 +230,10 @@
 								<div class="form-group">
 									<div class="well well-sm no-margin">
 										<div class="btn-group radioBtn">
-											<a class="btn btn-primary btn-sm notActive" data-toggle="scroll" data-title="2">Y</a>
-											<a class="btn btn-primary btn-sm active" data-toggle="scroll" data-title="1">N</a>
+											<a class="btn btn-primary btn-sm notActive" data-toggle="scroll" data-title="2">Yes</a>
+											<a class="btn btn-primary btn-sm active" data-toggle="scroll" data-title="1">No</a>
 										</div>
-										<label for="scroll" class="">Scroll?</label>
+										<label for="scroll" class="">News Headline ?</label>
 										<input type="hidden" name="scroll" id="scroll" value="1">
 									</div>
 								</div>

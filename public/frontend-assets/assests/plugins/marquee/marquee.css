@@ -1,0 +1,37 @@
+.marquee-block{
+    position: relative;
+}
+.marquee-block h2 {
+    height: 34px;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    background: #91ecbd;
+    color: #000;
+    padding: 7px 10px;
+}
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #daffe2;
+    list-style: none;
+    height: 34px;
+    display: inline-block;
+    padding: 0;
+}
+.marquee li{
+    display: inline-block;
+    padding-right:15px;
+}
+.marquee li a {
+    padding: 4px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+.marquee li a:hover {
+    color: #00df76;
+}
+.marquee li i{
+    display: inline-block;
+}

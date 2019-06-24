@@ -1,42 +1,21 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'ঢাকা প্রকাশ')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/assests/plugins/bootstrap-4.2.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/assests/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/common/css/soliman-lipi-font-face.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/plugins/marquee/marquee.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/common/css/style.css') }}">
+    <title>@yield('title', 'USA BANGLA NEWS')</title>
 
     @yield('customMeta')
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/bootstrap-3.3.7/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/nav/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/lazyload/lazyload.css') }}">
-
-    <!-- only for archive page -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/tiny-date-picker-master/tiny-date-picker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/tiny-date-picker-master/date-range-picker.css') }}">
-
-    <!-- Only for photo-gallery page -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/lightbox-without-jquery/dist/lightbox-without-jquery.min.css') }}">
-    @yield('custom-css')
-    <!-- Custom css -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/common/css/style.css') }}">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139570021-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-139570021-1');
-    </script>
-
 </head>
-<body onload="myFunction()">
-<button type="button" id="back_to_top">
-    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-</button>
-<div id="overlay" onclick="overlay_click('overlay');"></div>
+<body>
+
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -67,6 +46,21 @@
 
 <!-- Custom js -->
 <script src="{{ asset('frontend-assets/common/js/all.js') }}"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('frontend-assets/assests/plugins/jquery/jquery-3.3.1.slim.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/popper/popper.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/bootstrap-4.2.1/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/marquee/marquee.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/common/js/custom.js') }}"></script>
+<script>
+    $('.marquee').marquee({
+        pauseOnHover: true,
+        duration: 30000
+    });
+</script>
+
 </body>
 </html>
 

@@ -25,7 +25,7 @@ class BnFrontendController extends Controller
         $specialTopPosition = BnContentPosition::where('special_cat_id', 42)->where('deletable', 1)->first();
         if(!is_null($specialTopPosition->content_ids)){
             $aContentIDs = explode(",", $specialTopPosition->content_ids);
-            $aContentIDs = array_slice($aContentIDs, 0, 9);
+            $aContentIDs = array_slice($aContentIDs, 0, 6);
             $sContentIDs = implode(',', $aContentIDs);
             $specialTopContents = BnContent::with('category', 'subcategory')->whereIn('content_id', $aContentIDs)->where('status', 1)->where('deletable', 1)->orderByRaw("FIELD(content_id, $sContentIDs)")->get();
             //dd($specialTopContents);
@@ -51,8 +51,11 @@ class BnFrontendController extends Controller
         // Literature Content
         $literatureContents = BnHelperController::getCategoryContent(8, 5);
 
-        // Sports Content
+        // Sports Content 5
         $sportsContents = BnHelperController::getCategoryContent(5, 5);
+
+        // Sports Content 6
+        $sportsContentsNew = BnHelperController::getCategoryContent(5, 6);
 
         // Lifestyle Content
         $lifestyleContents = BnHelperController::getCategoryContent(9, 5);
@@ -91,7 +94,7 @@ class BnFrontendController extends Controller
         $tourismContents = BnHelperController::getCategoryContent(15, 5);
 
 
-        return view('frontend.bn.home', compact('specialTopContents', 'latestContents', 'popularContents', 'englishContents', 'nationalContents', 'politicsContents', 'economyContents', 'internationalContents', 'literatureContents', 'lifestyleContents', 'sportsContents', 'healthContents', 'technologyContents', 'educationContents', 'careerContents', 'horoscopeContents', 'entertainmentContents', 'islamContents', 'featureContents', 'interviewContents', 'disUpozContents', 'tourismContents'));
+        return view('frontend.bn.home', compact('specialTopContents', 'latestContents', 'popularContents', 'englishContents', 'nationalContents', 'politicsContents', 'economyContents', 'internationalContents', 'literatureContents', 'lifestyleContents', 'sportsContents', 'sportsContentsNew', 'healthContents', 'technologyContents', 'educationContents', 'careerContents', 'horoscopeContents', 'entertainmentContents', 'islamContents', 'featureContents', 'interviewContents', 'disUpozContents', 'tourismContents'));
     }
 
     public function categoryContent($catSlug){
