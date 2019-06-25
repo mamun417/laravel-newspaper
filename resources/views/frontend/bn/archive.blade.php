@@ -78,7 +78,7 @@
 
                     </div>
                     <ul class="pagination pagination-sm">
-                        {{ $contents->links()}}
+                        {{ $contents->appends(['cat' => request()->cat, '' => request()->dateFrom, '' => request()->dateTo, 'keyword' => request()->keyword])->links()}}
                     </ul>
                 </div>
             </div>
