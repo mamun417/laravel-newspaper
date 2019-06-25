@@ -154,6 +154,7 @@ class BnFrontendController extends Controller
             $relatedContents = BnContent::with('category', 'subcategory')->whereIn('content_id', $aRelIds)->where('status', 1)->where('deletable', 1)->orderByRaw("FIELD(content_id, $detailsContent->related_ids)")->get();
         }
 
+        //dd($detailsContent->toArray());
         $latestContents = BnHelperController::getLatestContent(10);
         $popularContents = BnHelperController::getPopularContent(10);
 
