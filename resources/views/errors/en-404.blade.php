@@ -73,7 +73,7 @@
                 <img src="{{ asset(config('appconfig.commonImagePath').'error-404.png') }}" alt="" style="max-width:100%;">
                 <h1>Nothing found!</h1>
                 <p>
-                    You are not finding what you are searching for. The matter is probably not related to Dhaka Prakash or you are wrongly searching. Please be sure to check your inquiry
+                    You are not finding what you are searching for. The matter is probably not related to USA Bangla News or you are wrongly searching. Please be sure to check your inquiry
                 </p>
                 <a href="" class="btn-home"><i class="fa fa-long-arrow-left"></i> Go Home</a>
             </div>

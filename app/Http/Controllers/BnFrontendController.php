@@ -108,7 +108,7 @@ class BnFrontendController extends Controller
         $latestContents = BnHelperController::getLatestContent(10);
         $popularContents = BnHelperController::getPopularContent(10);
 
-        $contents = BnHelperController::getCategoryContent($catId, 21, true);
+        $contents = BnHelperController::getCategoryContent($catId, 13, true);
 
         $otherCatContents = BnHelperController::getCategoryContent(rand(1,20), 5);
 
