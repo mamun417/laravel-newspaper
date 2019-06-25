@@ -17,7 +17,7 @@
                 <div class="col-sm-8">
                     @if($contents->count())
                         @php($topCatContent = $contents->shift())
-                        @php($sURL = fEnURL($topCatContent->content_id, $topCatContent->category->cat_slug, ($topCatContent->subcategory->subcat_slug ?? null), $topCatContent->content_type))
+                        @php($sURL = fEnURL($topCatContent->content_id, $topCatContent->category->cat_slug, ($topCatContent->subcategory->subcat_slug ?: null), $topCatContent->content_type))
 
                         <div class="mb-3 border-bottom">
 

@@ -22,206 +22,126 @@
 @section('mainContent')
 
     <div class="main-content">
-        <div class="container">
-            <!-- Top Section -->
-            <p class="breadcrumb">
-                <a href="{{ url('/en') }}"><i class="fa fa-home"></i></a>
-                <span>&raquo;</span>
-                <a href="{{ url('/en/'.$detailsContent->category->cat_slug) }}" class="active">{{ $detailsContent->category->cat_name }}</a>
-            </p>
+        <!-- Top Section -->
+        <div class="pl-3 py-3 border-light border-bottom mb-3 bg-light">
+            <div class="container">
+                <ol class="list-unstyled list-inline m-0">
+                    <li class="d-inline-block"><a href="{{ url('/') }}" class="text-success"><i class="fa fa-home"></i></a></li> »
+                    <li class="d-inline-block"><a href="{{ url($detailsContent->category->cat_slug) }}" class="text-success">{{ $detailsContent->category->cat_name }}</a></li>
+                </ol>
+            </div>
+        </div>
 
-            <div class="row marginBottom20">
-                <div class="col-sm-9">
-                    <div class="news-details">
-                        <h1>{{ $detailsContent->content_heading }}</h1>
-                        <p class="news-time">
+        <div class="container py-2 mb-4">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div>
+                        <h2 class="font-weight-bold text-dark m-font-24">
+                            {{ $detailsContent->content_heading }}
+                        </h2>
+                        <p class="small text-muted">
                             <i class="fa fa-clock-o"></i> {{ date('d F Y, h:i a', strtotime($detailsContent->created_at)) }}
-                            {{ $detailsContent->updated_at ? '| Updated: ' . date('d F Y, h:i a', strtotime($detailsContent->updated_at)) : '' }}
-                        </p>
-                        <hr>
-
-                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                        <div class="addthis_inline_share_toolbox"></div>
-
+                        {{ $detailsContent->updated_at ? '| Updated: ' . date('d F Y, h:i a', strtotime($detailsContent->updated_at)) : '' }}
+                    </div>
+                    <figure class="figure">
                         <div class="imgbox">
 
                             @if($detailsContent->video_id)
                                 @if($detailsContent->video_type == 1)
                                     <div class="embed-responsive embed-responsive-16by9">
                                         <figure class="content-media content-media--video" id="featured-media">
-                                    <iframe src="https://www.youtube.com/embed/{{ $detailsContent->video_id }}?enablejsapi=1&rel=1&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
-                                            </figure>
-                                        </div>
+                                            <iframe src="https://www.youtube.com/embed/{{ $detailsContent->video_id }}?enablejsapi=1&rel=1&showinfo=1&controls=1" frameborder="0" allowfullscreen></iframe>
+                                        </figure>
+                                    </div>
                                 @elseif($detailsContent->video_type == 2)
                                     <div class="fb-video" data-href="https://www.facebook.com/{{ $detailsContent->video_id }}" data-autoplay="false" data-show-text="false" data-show-captions="false" data-allowfullscreen="true"></div>
                                 @endif
 
                             @else
-                                <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $detailsContent->img_bg_path ? asset(config('appconfig.contentImagePath').$detailsContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $detailsContent->content_heading }}" title="{{ $detailsContent->content_heading }}">
+                                <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $detailsContent->img_bg_path ? asset(config('appconfig.contentImagePath').$detailsContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}"  class="lazyload img-responsive w-100" alt="{{ $detailsContent->content_heading }}" title="{{ $detailsContent->content_heading }}">
 
                             @endif
                         </div>
+                    </figure>
 
-                        @if($detailsContent->img_bg_caption)
-                            <div class="caption">
-                                {{ $detailsContent->img_bg_caption }}
-                            </div>
-                        @endif
-
-                        <div class="description">{!! $detailsContent->content_details !!}</div>
+                    <div class="details">
+                        {!! $detailsContent->content_details !!}
                     </div>
-                    <hr>
-                    <div class="gist">
-                        <p>Category : <a href="{{ url($detailsContent->category->cat_slug) }}"> {{ $detailsContent->category->cat_name_bn }}</a></p>
+                    @if($detailsContent->tags)
+                        <div class="border-top border-bottom py-3 my-2">
 
-                        @if($detailsContent->tags)
                             @php($tags = explode(',', $detailsContent->tags))
-                            <p>Tag :
+                            <i class="fa fa-tags text-success"></i>
                             @foreach($tags as $tag)
-                                    <a href="{{ url('/topic'.$tag) }}" class="bg-info">{{ $tag }}</a>
-                                @if(!$loop->last), @endif
+                                <a href="#0{{--{{ url('/topic'.$tag) }}--}}" class="btn btn-sm btn-outline-success rounded-pill">{{ $tag }}</a>
+                                @if(!$loop->last) @endif
                             @endforeach
-                        @endif
-
-                    </div>
-                    <hr>
+                        </div>
+                    @endif
                 </div>
-                <div class="col-sm-3">
-                    <!-- Tab links -->
-                    <div class="marginBottom20" style="box-shadow: 0 2px 1px 1px #d5d5d5;">
+
+                <div class="col-sm-4">
+                    @if($relatedContents)
+                        <div class="shadow-sm rounded mb-4 border-top">
+                            <h6 class="font-weight-bold text-center bg-light m-0 p-3">More From {{ $detailsContent->category->cat_name }}</h6>
+                            <div class="list-group list-group-flush">
+
+                                @foreach($relatedContents as $content)
+
+                                    @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
+                                    <a href="{{ $sURL }}" class="list-group-item list-group-item-action link">{{ $content->content_heading }}</a>
+
+                                @endforeach
+
+                            </div>
+                            <div class="text-center p-3">
+                                <a href="{{ url('/en') }}" class="btn btn-outline-secondary">All News</a>
+                            </div>
+                        </div>
+                    @endif
+
+                    <div class="shadow-sm mb-4 rounded-0 border-top">
                         @include('frontend.en.layouts.latestPopularBox')
-                    </div>
-                    <div>
-                        <div class="common-title common-title-brown mb-4">
-                            <span class="common-title-shape">
-                                <span class="common-title-link">More From {{ $detailsContent->category->cat_name }} </span>
-                            </span>
-                        </div>
-                        <div class="cat-box-with-media default-height">
-
-                            @foreach($moreContents as $content)
-
-                                @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
-
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="imgbox">
-                                            <a href="{{ $sURL }}">
-                                                @if($content->video_type == 1 && $content->video_id)
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/default.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
-                                                @else
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_xs_path ? asset(config('appconfig.contentImagePath').$content->img_xs_path) : asset(config('appconfig.commonImagePath').'xs-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
-                                                @endif
-
-                                                @if($content->video_id)
-                                                    <div class="video-icon">
-                                                        <i class="fa fa-video-camera"></i>
-                                                    </div>
-                                                @endif
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="{{ $sURL }}">{{ $content->content_heading }}</a>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                            @endforeach
-
-                        </div>
                     </div>
                 </div>
             </div>
 
-            @if($relatedContents)
-                <div class="row related-news">
-                    <div class="col-sm-12">
-                        <div class="common-title common-title-brown mb-4">
-                            <span class="common-title-shape">
-                                <a class="common-title-link" href="#">Read More</a>
-                            </span>
-                        </div>
-                        <div class="row FlexRow">
+            <div class="pt-4">
+                <h2 class="rakSab-common-cat-title"><span>Read More</span></h2>
+                @if($popularContents)
+                    <div class="row">
+                        @php($alochitoContents = $popularContents->splice(0,4))
+                        @foreach($alochitoContents as $content)
+                            @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?: null), $content->content_type))
 
-                            @foreach($relatedContents as $content)
+                            <div class="col-sm-3 d-flex mb-3 col-6">
+                                <a href="{{ $sURL }}" title="{{ $content->content_heading }}" class="d-block border-bottom border-success text-dark shadow-sm w-100 link">
+                                    <figure class="figure mb-0">
+                                        <img src="https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/media/imgAllNew/SM/2019January/drink-poison-die-women-20190209142948.jpg" alt="Text" class="w-100 mb-2">
+                                        @if($content->video_type == 1 && $content->video_id)
+                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/mqdefault.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
+                                        @else
+                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_sm_path ? asset(config('appconfig.contentImagePath').$content->img_sm_path) : asset(config('appconfig.commonImagePath').'sm-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
+                                        @endif
 
-                                @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
-
-                                <div class="col-sm-3 col-xs-6">
-                                    <div class="single_related">
-                                        <div class="imgbox">
-                                            <a href="{{ $sURL }}" title="{{ $content->content_heading }}">
-                                                @if($content->video_type == 1 && $content->video_id)
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/mqdefault.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
-                                                @else
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_sm_path ? asset(config('appconfig.contentImagePath').$content->img_sm_path) : asset(config('appconfig.commonImagePath').'sm-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
-                                                @endif
-
-                                                @if($content->video_id)
-                                                    <div class="video-icon">
-                                                        <i class="fa fa-video-camera"></i>
-                                                    </div>
-                                                @endif
-                                            </a>
-                                        </div>
-                                        <h3><a href="{{ $sURL }}" title="{{ $content->content_heading }}">{{ $content->content_heading }}</a></h3>
+                                        @if($content->video_id)
+                                            <div class="video-icon">
+                                                <i class="fa fa-video-camera"></i>
+                                            </div>
+                                        @endif
+                                    </figure>
+                                    <div class="px-3 py-2">
+                                        <h6 class="font-weight-bold">{{ $content->content_heading }}</h6>
                                     </div>
-                                </div>
+                                </a>
+                            </div>
+                        @endforeach
 
-                            @endforeach
-
-                        </div>
                     </div>
-                </div>
-
-            @endif
-
-            @if($popularContents)
-                <div class="row related-news">
-                    <div class="col-sm-12">
-                        <div class="common-title common-title-brown mb-4">
-                            <span class="common-title-shape">
-                                <a class="common-title-link" href="#">Popular News</a>
-                            </span>
-                        </div>
-                        <div class="row FlexRow">
-                            @php($alochitoContents = $popularContents->splice(0,6))
-                            @foreach($alochitoContents as $content)
-
-                                @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
-
-                                <div class="col-sm-2 col-xs-6">
-                                    <div class="single_related">
-                                        <div class="imgbox">
-                                            <a href="{{ $sURL }}" title="{{ $content->content_heading }}">
-                                                @if($content->video_type == 1 && $content->video_id)
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/mqdefault.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
-                                                @else
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_sm_path ? asset(config('appconfig.contentImagePath').$content->img_sm_path) : asset(config('appconfig.commonImagePath').'sm-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
-                                                @endif
-
-                                                @if($content->video_id)
-                                                    <div class="video-icon">
-                                                        <i class="fa fa-video-camera"></i>
-                                                    </div>
-                                                @endif
-                                            </a>
-                                        </div>
-                                        <h3><a href="{{ $sURL }}" title="{{ $content->content_heading }}">{{ $content->content_heading }}</a></h3>
-                                    </div>
-                                </div>
-
-                            @endforeach
-
-                        </div>
-                    </div>
-                </div>
-
-            @endif
-
+                @endif
+            </div>
         </div>
+
     </div>
 
 @endsection
