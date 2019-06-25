@@ -141,6 +141,7 @@
                     <a href="" class="text-dark px-2" rel="nofollow" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
                     <a href="" class="text-dark px-2" rel="nofollow" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
                     <a href="{{ url('/en/archive') }}" class="text-dark ml-5"><i class="fa fa-database"></i> Archive</a>
+                    <a href="{{ url('/') }}" class="text-dark ml-5 btn btn-outline-success hover_cw"><i class="fa fa-language" aria-hidden="true"></i> বাংলা</a>
                 </div>
             </div>
         </div>
@@ -161,7 +162,7 @@
                     <li class="{{ !request()->segment(1) ? 'active' : '' }} nav-item"><a href="{{ url('/en') }}" class="nav-link font-weight-bold"><i class="fa fa-home"></i></a></li>
                     @php
                         $categories = enHeaderCategory();
-                        $topCategories = $categories->splice(0,13);
+                        $topCategories = $categories->splice(0,12);
                     @endphp
                     @foreach($topCategories as $category)
                         <li class="{{ request()->segment(1) == $category->cat_slug ? 'active' : '' }} nav-item">

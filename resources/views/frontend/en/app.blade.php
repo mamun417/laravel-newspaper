@@ -13,49 +13,9 @@
     <title>@yield('title', 'USA BANGLA NEWS')</title>
 
     @yield('customMeta')
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/bootstrap-3.3.7/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/nav/nav.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/lazyload/lazyload.css') }}">
-
-    <!-- only for archive page -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/tiny-date-picker-master/tiny-date-picker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/tiny-date-picker-master/date-range-picker.css') }}">
-
-    <!-- Only for photo-gallery page -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/lightbox-without-jquery/dist/lightbox-without-jquery.min.css') }}">
-
-    <!-- Custom css -->
-    <link rel="stylesheet" href="{{ asset('frontend-assets/common/css/style.css') }}">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139570021-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-139570021-1');
-    </script>
-
 </head>
-<body onload="myFunction()">
-<div id="overlay" onclick="overlay_click('overlay');"></div>
-<button type="button" id="back_to_top">
-    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-</button>
+<body>
+
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -73,6 +33,13 @@
 
     @include('frontend.en.common.footer')
 </div>
+
+<script src="{{ asset('frontend-assets/plugins/lazyload/lazyload.js') }}"></script>
+<script src="{{ asset('frontend-assets/plugins/nav/nav.js') }}"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c97da3fc2f6b905"></script>
+
+@yield('custom-js')
 
 <!-- Only for photo-gallery page -->
 <script src="{{ asset('frontend-assets/plugins/lightbox-without-jquery/dist/lightbox-without-jquery.min.js') }}"></script>
@@ -94,26 +61,5 @@
     });
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-<script src="{{ asset('frontend-assets/plugins/lazyload/lazyload.js') }}"></script>
-<script src="{{ asset('frontend-assets/plugins/nav/nav.js') }}"></script>
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c97da3fc2f6b905"></script>
-
-<!-- Only for photo-gallery page -->
-<script src="{{ asset('frontend-assets/plugins/lightbox-without-jquery/dist/lightbox-without-jquery.min.js') }}"></script>
-
-<!-- Custom js -->
-<script src="{{ asset('frontend-assets/common/js/all.js') }}"></script>
 </body>
 </html>

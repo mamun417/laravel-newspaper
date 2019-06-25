@@ -24,6 +24,7 @@
                     <a href="" class="text-dark px-2" rel="nofollow" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
                     <a href="" class="text-dark px-2" rel="nofollow" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
                     <a href="{{ url('/archive') }}" class="text-dark ml-5"><i class="fa fa-database"></i> আর্কাইভ</a>
+                    <a href="{{ url('/en') }}" class="text-dark ml-5 btn btn-outline-success hover_cw"><i class="fa fa-language" aria-hidden="true"></i> English</a>
                 </div>
             </div>
         </div>

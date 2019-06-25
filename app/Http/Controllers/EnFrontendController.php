@@ -107,7 +107,7 @@ class EnFrontendController extends Controller
         $latestContents = EnHelperController::getLatestContent(10);
         $popularContents = EnHelperController::getPopularContent(10);
 
-        $contents = EnHelperController::getCategoryContent($catId, 21, true);
+        $contents = EnHelperController::getCategoryContent($catId, 13, true);
 
         $otherCatContents = EnHelperController::getCategoryContent(rand(1,20), 5);
 

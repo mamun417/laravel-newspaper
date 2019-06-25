@@ -282,6 +282,12 @@ a.link:hover {
   display: none;
 }
 
+/*Created by Mamun
+Hover color white*/
+a.hover_cw:hover{
+  color: #fff!important;
+}
+
 /*Media query css*/
 @media (max-width: 768px) {
   .moblie-w-50 {
