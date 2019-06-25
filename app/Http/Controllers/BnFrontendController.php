@@ -177,7 +177,7 @@ class BnFrontendController extends Controller
 
         if ($keyword) $contents = $contents->where('content_heading', 'like', '%'.$keyword.'%');
 
-        $contents = $contents->where('status', 1)->where('deletable', 1)->orderBy('content_id', 'desc')->paginate(20);
+        $contents = $contents->where('status', 1)->where('deletable', 1)->orderBy('content_id', 'desc')->paginate(12);
 
         $categories = BnCategory::select('cat_id', 'cat_name', 'cat_name_bn')->where('deletable', 1)->where('status', 1)->get();
 
