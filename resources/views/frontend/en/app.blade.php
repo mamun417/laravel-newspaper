@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Dhakaprokash')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/assests/plugins/bootstrap-4.2.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/assests/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/common/css/soliman-lipi-font-face.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/plugins/marquee/marquee.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend-assets/assests/common/css/style.css') }}">
+    <title>@yield('title', 'USA BANGLA NEWS')</title>
 
     @yield('customMeta')
+
+
+
+
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/bootstrap-3.3.7/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend-assets/plugins/nav/nav.css') }}">
@@ -54,6 +73,37 @@
 
     @include('frontend.en.common.footer')
 </div>
+
+<!-- Only for photo-gallery page -->
+<script src="{{ asset('frontend-assets/plugins/lightbox-without-jquery/dist/lightbox-without-jquery.min.js') }}"></script>
+
+<!-- Custom js -->
+<script src="{{ asset('frontend-assets/common/js/all.js') }}"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ asset('frontend-assets/assests/plugins/jquery/jquery-3.3.1.slim.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/popper/popper.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/bootstrap-4.2.1/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/plugins/marquee/marquee.js') }}"></script>
+<script src="{{ asset('frontend-assets/assests/common/js/custom.js') }}"></script>
+<script>
+    $('.marquee').marquee({
+        pauseOnHover: true,
+        duration: 30000
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 <script src="{{ asset('frontend-assets/plugins/lazyload/lazyload.js') }}"></script>
 <script src="{{ asset('frontend-assets/plugins/nav/nav.js') }}"></script>

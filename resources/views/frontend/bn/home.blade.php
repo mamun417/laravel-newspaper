@@ -506,8 +506,6 @@
                 </div>
             </div>
 
-
-             {{--Now working...............--}}
             <div class="bg-light-green pt-5">
                 <div class="container">
                     <div class="row">

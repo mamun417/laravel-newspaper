@@ -50,8 +50,11 @@ class EnFrontendController extends Controller
         // Literature Content
         $literatureContents = EnHelperController::getCategoryContent(8, 5);
 
-        // Sports Content
+        // Sports Content 5
         $sportsContents = EnHelperController::getCategoryContent(5, 5);
+
+        // Sports Content 6
+        $sportsContentsNew = EnHelperController::getCategoryContent(5, 6);
 
         // Lifestyle Content
         $lifestyleContents = EnHelperController::getCategoryContent(9, 5);
@@ -90,7 +93,7 @@ class EnFrontendController extends Controller
         $tourismContents = EnHelperController::getCategoryContent(15, 5);
 
 
-        return view('frontend.en.home', compact('specialTopContents', 'latestContents', 'popularContents', 'bnContents', 'nationalContents', 'politicsContents', 'economyContents', 'internationalContents', 'literatureContents', 'lifestyleContents', 'sportsContents', 'healthContents', 'technologyContents', 'educationContents', 'careerContents', 'horoscopeContents', 'entertainmentContents', 'islamContents', 'featureContents', 'interviewContents', 'disUpozContents', 'tourismContents'));
+        return view('frontend.en.home', compact('specialTopContents', 'latestContents', 'popularContents', 'bnContents', 'nationalContents', 'politicsContents', 'economyContents', 'internationalContents', 'literatureContents', 'lifestyleContents', 'sportsContents', 'sportsContentsNew', 'healthContents', 'technologyContents', 'educationContents', 'careerContents', 'horoscopeContents', 'entertainmentContents', 'islamContents', 'featureContents', 'interviewContents', 'disUpozContents', 'tourismContents'));
     }
 
     public function categoryContent($catSlug){

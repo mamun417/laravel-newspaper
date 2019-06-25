@@ -9,7 +9,7 @@ function bnFooterCategory(){
 }
 
 function enHeaderCategory(){
-    return \App\EnCategory::where('cat_type', 1)->where('top_menu', 1)->where('status', 1)->where('deletable', 1)->orderBy('cat_position')->get();
+    return \App\EnCategory::where('cat_type', 1)->where('status', 1)->where('deletable', 1)->get();
 }
 
 function enFooterCategory(){
