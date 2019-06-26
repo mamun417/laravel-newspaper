@@ -38,7 +38,7 @@
 
                             @php($spTopRightTwoContents = $specialTopContents->splice(0,5))
                             <div class="col-sm-4 px-1">
-                                @if($spTopRightTwoContents)
+                                @if($spTopRightTwoContents->count() > 0)
                                     @foreach($spTopRightTwoContents as $content)
                                         @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
 
@@ -89,7 +89,7 @@
                                                     @else
                                                         <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $nlMainContent->img_bg_path ? asset(config('appconfig.contentImagePath').$nlMainContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $nlMainContent->content_heading }}" title="{{ $nlMainContent->content_heading }}">
                                                     @endif
-                                                    @if($content->video_id)
+                                                    @if(isset($content) AND $content->video_id)
                                                         <div class="video-icon">
                                                             <i class="fa fa-video-camera"></i>
                                                         </div>

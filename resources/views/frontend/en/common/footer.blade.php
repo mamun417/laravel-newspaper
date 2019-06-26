@@ -36,7 +36,7 @@
                         <i class="fa fa-map-marker"></i> Office : Dhaka
                     </div>
                     <div>
-                        <i class="fa fa-copyright"></i> <?php echo date("Y");?> All Right Reserved | USA Bangla News, Developed by: <a class="text-success" href="http://www.purpleit.com" target="_blank">Purple IT Ltd.</a>
+                        <i class="fa fa-copyright"></i> <?php echo date("Y");?> All Right Reserved | USA Bangla News, Developed by: <a class="text-white" href="http://www.purpleit.com" target="_blank">Purple IT Ltd.</a>
                     </div>
                     <p></p>
                 </div>

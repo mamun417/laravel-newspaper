@@ -116,8 +116,8 @@
 							<label for="leadNews" class="col-sm-3">Lead News </label>
 							<div class="col-sm-9">
 								<select name="leadNews" class="form-control" id="leadNews">
-									<option value="0"{{ old('leadNews') == 1 ? ' selected' : '' }}>No</option>
-									<option value="1"{{ old('leadNews') == 2 ? ' selected' : '' }}>Yes</option>
+									<option value="0"{{ old('leadNews') == 0 ? ' selected' : '' }}>No</option>
+									<option value="1"{{ old('leadNews') == 1 ? ' selected' : '' }}>Yes</option>
 								</select>
 							</div>
 						</div>

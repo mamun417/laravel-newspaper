@@ -32,7 +32,7 @@
             <div class="col-xs-12">
                 <div class="box box-info">
                     <div class="box-body">
-                        <br>
+                        {{--<br>
                         <div class="form-inline">
                             {{ csrf_field() }}
                             <input type="hidden" name="position" value="{{ $news_position->position_id }}">
@@ -64,7 +64,7 @@
                                 <button type="submit" id="positionSet" class="btn btn-primary">Set</button>
                             </div>
                         </div>
-                        <br>
+                        <br>--}}
                         <div class="row">
                             <div class="col-sm-1 text-right position-number">
                                 <ul id="serial">
