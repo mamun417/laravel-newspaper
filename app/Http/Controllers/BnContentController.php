@@ -208,6 +208,18 @@ class BnContentController extends Controller
             $type = 'cat';
             $this->setNewsPosition($type, $request->category, $request->categoryPosition, $content->content_id);
         }
+
+        // Insert Lead News Position
+        if ($request->leadNews == 1){
+            $news_id = $content->content_id;
+            $content_ids = BnContentPosition::select('content_ids')->first();
+            $content_ids = $news_id.','.$content_ids->content_ids;
+            $content_ids_array = explode(',', $content_ids);
+            $new_content_ids = array_slice($content_ids_array, 0, 6);
+            BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+        }
+
+
         // Generate HTML
         //new GenerateHTMLController($request->category, $request->specialCategory, $request->subCategory);
 //        if ($request->specialCategory && $request->specialCategoryPosition) {
@@ -406,6 +418,25 @@ class BnContentController extends Controller
 
         $content->tags = $request->normalTags;
         $content->scroll = $request->scroll;
+
+        // If Lead News No and Want to Make Yes
+        if ($content->lead_news = 0 && $request->leadNews == 1){
+            $content_ids = BnContentPosition::select('content_ids')->first();
+            $content_ids = $id.','.$content_ids->content_ids;
+            $content_ids_array = explode(',', $content_ids);
+            $new_content_ids = array_slice($content_ids_array, 0, 6);
+            BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+        }
+
+        // If Lead News Yes and Want to Make No
+        if ($content->lead_news = 1 && $request->leadNews == 0){
+            $content_ids = BnContentPosition::select('content_ids')->first();
+            $content_ids = $content_ids->content_ids;
+            $content_ids_array = explode(',', $content_ids);
+            $key = array_search($id, $content_ids_array);
+            unset($content_ids_array[$key]);
+            BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$content_ids_array)]);
+        }
 
         $content->save();
         //new GenerateHTMLController($request->category, $request->specialCategory, $request->subCategory);

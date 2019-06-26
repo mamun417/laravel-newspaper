@@ -32,7 +32,7 @@
             <div class="col-xs-12">
                 <div class="box box-info">
                     <div class="box-body">
-                        <br>
+                        {{--<br>
                         <div class="form-inline">
                             {{ csrf_field() }}
                             <input type="hidden" name="position" value="{{ $news_position->position_id }}">
@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                 <select name="position" id="position" class="form-control">
-                                    @for($i=1; $i<=12; $i++);
+                                    @for($i=1; $i<=6; $i++);
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
@@ -64,7 +64,7 @@
                                 <button type="submit" id="positionSet" class="btn btn-primary">Set</button>
                             </div>
                         </div>
-                        <br>
+                        <br>--}}
                         <div class="row">
                             <div class="col-sm-1 text-right position-number">
                                 <ul id="serial">

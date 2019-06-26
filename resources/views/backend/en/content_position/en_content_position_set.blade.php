@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-group">
                                 <select name="position" id="position" class="form-control">
-                                    @for($i=1; $i<=12; $i++);
+                                    @for($i=1; $i<=6; $i++);
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>

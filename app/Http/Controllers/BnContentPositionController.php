@@ -117,7 +117,7 @@ class BnContentPositionController extends Controller
         if(!empty($news_position->content_ids)){
             $content_ids = explode(',', $news_position->content_ids);
 
-            $allnews = BnContent::select('content_id', 'content_heading')->whereIn('content_id', $content_ids)->orderByRaw(DB::raw("FIELD(content_id, $news_position->content_ids)"))->get();
+            $allnews = BnContent::select('content_id', 'content_heading')->whereIn('content_id', $content_ids)->where('lead_news', 1)->orderByRaw(DB::raw("FIELD(content_id, $news_position->content_ids)"))->take('6')->get();
         }
 
         return view('backend.bn.content_position.content_position_set', compact('allpositions', 'allnews', 'news_position'));
