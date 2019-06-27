@@ -86,6 +86,67 @@
             </li>
           </ul>
         </li>
+
+        <!-- Ads Management Start -->
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-folder-open-o"></i> <span>Ads Management</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                </a>
+                <ul class="treeview-menu">
+                  <li class="">
+                    <a href="#"><i class="fa fa-plus-square"></i> All Page</a>
+                    <ul class="treeview-menu">
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Top Ad</a>
+                      </li>
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Footer Ad</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-plus-square"></i> Home Page</a>
+                    <ul class="treeview-menu">
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> After Lead News</a>
+                      </li>
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Before Sports News</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-plus-square"></i> Category Page</a>
+                    <ul class="treeview-menu">
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Right Top</a>
+                      </li>
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Right Bottom</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="#"><i class="fa fa-plus-square"></i> News Details Page</a>
+                    <ul class="treeview-menu">
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Right Top</a>
+                      </li>
+                      <li class="">
+                        <a href="#"><i class="fa fa-file-o"></i> Right Bottom</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+
+        <!-- Ads Management END -->
+
         {{--<li class="treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>Photo</span>

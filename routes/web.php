@@ -138,6 +138,18 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('backend/bn-survey', 'BnSurveyController');
     Route::get('backend/en-survey/change-status/{id}/{status}', 'EnSurveyController@changeStatus')->name('en.survey.edit');
     Route::resource('backend/en-survey', 'EnSurveyController');
+
+    // Ads Management Routes
+    Route::get('backend/ads/top', 'AdsManagementController@topAd')->name('top.ad');
+    Route::get('backend/ads/footer', 'AdsManagementController@footerAd')->name('footer.ad');
+    Route::get('backend/ads/after-lead-news', 'AdsManagementController@afterLeadNews')->name('after.lead.news');
+    Route::get('backend/ads/before-sports-news', 'AdsManagementController@beforeSportsNews')->name('before.sports.news');
+    Route::get('backend/ads/category-right-top', 'AdsManagementController@categoryRightTop')->name('category.right.top');
+    Route::get('backend/ads/category-right-bottom', 'AdsManagementController@categoryRightBottom')->name('category.right.bottom');
+    Route::get('backend/ads/news-details-right-top', 'AdsManagementController@newsDetailsRightTop')->name('news.details.right.top');
+    Route::get('backend/ads/news-details-right-bottom', 'AdsManagementController@newsDetailsRightBottom')->name('news.details.right.bottom');
+
+    Route::post('backend/ads', 'AdsManagementController@store')->name('ads.store');
 });
 
 // En Frontend routes
