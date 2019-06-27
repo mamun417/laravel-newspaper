@@ -229,20 +229,20 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <div class="btn-group radioBtn">
-                                    <a id="showNewsY" class="btn btn-primary btn-sm" data-toggle="showNews" data-title="1">Y</a>
-                                    <a id="showNewsN" class="btn btn-primary btn-sm" data-toggle="showNews" data-title="2">N</a>
+                                    <a id="showNewsY" class="btn btn-primary btn-sm" data-toggle="showNews" data-title="1">Yes</a>
+                                    <a id="showNewsN" class="btn btn-primary btn-sm" data-toggle="showNews" data-title="2">No</a>
                                 </div>
-                                <label for="showNews" class="">Show News?</label>
+                                <label for="showNews" class="">Show News ?</label>
                                 <input type="hidden" name="showNews" id="showNews">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <div class="btn-group radioBtn">
-                                    <a id="scrollY" class="btn btn-primary btn-sm" data-toggle="scroll" data-title="2">Y</a>
-                                    <a id="scrollN" class="btn btn-primary btn-sm" data-toggle="scroll" data-title="1">N</a>
+                                    <a id="scrollY" class="btn btn-primary btn-sm" data-toggle="scroll" data-title="2">Yes</a>
+                                    <a id="scrollN" class="btn btn-primary btn-sm" data-toggle="scroll" data-title="1">No</a>
                                 </div>
-                                <label for="scroll" class="">Scroll?</label>
+                                <label for="scroll" class="">News Headline ?</label>
                                 <input type="hidden" name="scroll" id="scroll">
                             </div>
                         </div>

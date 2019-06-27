@@ -81,7 +81,7 @@
                                         @php($sURL = fEnURL($nlMainContent->content_id, $nlMainContent->category->cat_slug, ($nlMainContent->subcategory->subcat_slug ?? null), $nlMainContent->content_type))
 
                                         <div class="border p-4 m-p-0 m-border-0 position-relative w-100">
-                                            <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/national') }}">National</a></h2>
+                                            <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$nlMainContent->category->cat_slug) }}">{{ $nlMainContent->category->cat_name }}</a></h2>
                                             <a href="{{ $sURL }}" class="link">
                                                 <figure class="figure mb-0">
                                                     @if($nlMainContent->video_type == 1 && $nlMainContent->video_id)
@@ -128,26 +128,26 @@
                                                     @endforeach
                                                 @endif
                                             </div>
-                                            <a href="{{ url('en/national') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                            <a href="{{ url('/en/'.$nlMainContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                         </div>
                                     @endif
                                 </div>
                             @endif
 
 
-                            @if($sportsContents)
+                            @if($islamContents)
                                 <div class="col-sm-6 col-md-4 col-12 mb-5 d-flex">
-                                    @php($spTopContent = $sportsContents->shift())
-                                    @if($spTopContent)
-                                        @php($sURL = fEnURL($spTopContent->content_id, $spTopContent->category->cat_slug, ($spTopContent->subcategory->subcat_slug ?? null), $spTopContent->content_type))
+                                    @php($islamContent = $islamContents->shift())
+                                    @if($islamContent)
+                                        @php($sURL = fDesktopURL($islamContent->content_id, $islamContent->category->cat_slug, ($islamContent->subcategory->subcat_slug ?? null), $islamContent->content_type))
                                         <div class="border p-4 m-p-0 m-border-0 position-relative w-100">
-                                            <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/sports') }}">Sports</a></h2>
+                                            <h2 class="rakSab-common-cat-title"><a href="{{ url($islamContent->category->cat_slug) }}">{{ $islamContent->category->cat_name }}</a></h2>
                                             <a href="{{ $sURL }}" class="link">
                                                 <figure class="figure mb-0">
-                                                    @if($spTopContent->video_type == 1 && $spTopContent->video_id)
-                                                        <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $spTopContent->video_id }}/hqdefault.jpg" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}">
+                                                    @if($islamContent->video_type == 1 && $islamContent->video_id)
+                                                        <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $islamContent->video_id }}/hqdefault.jpg" class="lazyload img-responsive" alt="{{ $islamContent->content_heading }}">
                                                     @else
-                                                        <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $spTopContent->img_bg_path ? asset(config('appconfig.contentImagePath').$spTopContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}" title="{{ $spTopContent->content_heading }}">
+                                                        <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $islamContent->img_bg_path ? asset(config('appconfig.contentImagePath').$islamContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $islamContent->content_heading }}" title="{{ $islamContent->content_heading }}">
                                                     @endif
                                                     @if($content->video_id)
                                                         <div class="video-icon">
@@ -155,14 +155,14 @@
                                                         </div>
                                                     @endif
                                                 </figure>
-                                                <h5 class="text-dark mt-2">{{ $spTopContent->content_heading }}</h5>
+                                                <h5 class="text-dark mt-2">{{ $islamContent->content_heading }}</h5>
                                             </a>
 
                                             <div class="row mb-4 mx-n2">
-                                                @php($spOtherContents = $sportsContents->all())
-                                                @if($spOtherContents)
-                                                    @foreach($spOtherContents as $content)
-                                                        @php($sURL = fEnURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
+                                                @php($islamOtherContents = $islamContents->all())
+                                                @if($islamOtherContents)
+                                                    @foreach($islamOtherContents as $content)
+                                                        @php($sURL = fDesktopURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
                                                         <div class="col-sm-6 col-12 mb-2 px-2">
                                                             <div class="link d-flex d-sm-block d-md-block d-lg-block d-xl-block">
                                                                 <a href="{{ $sURL }}" class="d-block moblie-pr-2 moblie-w-50">
@@ -188,7 +188,7 @@
                                                     @endforeach
                                                 @endif
                                             </div>
-                                            <a href="{{ url('en/sports') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                            <a href="{{ url($islamContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                         </div>
                                     @endif
                                 </div>
@@ -200,7 +200,7 @@
                                     @if($entTopContent)
                                         @php($sURL = fEnURL($entTopContent->content_id, $entTopContent->category->cat_slug, ($entTopContent->subcategory->subcat_slug ?? null), $entTopContent->content_type))
                                         <div class="border p-4 m-p-0 m-border-0 position-relative w-100">
-                                            <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/entertainment') }}">Entertainment</a></h2>
+                                            <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$entTopContent->category->cat_slug) }}">{{ $entTopContent->category->cat_name }}</a></h2>
                                             <a href="{{ $sURL }}" class="link">
                                                 <figure class="figure mb-0">
                                                     @if($entTopContent->video_type == 1 && $entTopContent->video_id)
@@ -247,7 +247,7 @@
                                                     @endforeach
                                                 @endif
                                             </div>
-                                            <a href="{{ url('en/entertainment') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                            <a href="{{ url('/en/'.$entTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                         </div>
                                     @endif
                                 </div>
@@ -264,12 +264,11 @@
 
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/economy') }}">Economy</a></h2>
 
                                     @if($economyContents)
                                         @php($ecTopContent = $economyContents->shift())
                                         @php($sURL = fEnURL($ecTopContent->content_id, $ecTopContent->category->cat_slug, ($ecTopContent->subcategory->subcat_slug ?? null), $ecTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$ecTopContent->category->cat_slug) }}">{{ $ecTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($ecTopContent->video_type == 1 && $ecTopContent->video_id)
@@ -297,18 +296,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/economy') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$ecTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/international') }}">International</a></h2>
 
                                     @if($internationalContents)
                                         @php($intTopContent = $internationalContents->shift())
                                         @php($sURL = fEnURL($intTopContent->content_id, $intTopContent->category->cat_slug, ($intTopContent->subcategory->subcat_slug ?? null), $intTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$intTopContent->category->cat_slug) }}">{{ $intTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($intTopContent->video_type == 1 && $intTopContent->video_id)
@@ -337,18 +335,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/international') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$intTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/literature') }}">Literature</a></h2>
 
                                     @if($literatureContents)
                                         @php($ltTopContent = $literatureContents->shift())
                                         @php($sURL = fEnURL($ltTopContent->content_id, $ltTopContent->category->cat_slug, ($ltTopContent->subcategory->subcat_slug ?? null), $ltTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$ltTopContent->category->cat_slug) }}">{{ $ltTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($ltTopContent->video_type == 1 && $ltTopContent->video_id)
@@ -377,18 +374,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/literature') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$ltTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/lifestyle') }}">Lifestyle</a></h2>
 
                                     @if($lifestyleContents)
                                         @php($lfTopContent = $lifestyleContents->shift())
                                         @php($sURL = fEnURL($lfTopContent->content_id, $lfTopContent->category->cat_slug, ($lfTopContent->subcategory->subcat_slug ?? null), $lfTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$lfTopContent->category->cat_slug) }}">{{ $lfTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($lfTopContent->video_type == 1 && $lfTopContent->video_id)
@@ -417,7 +413,7 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/lifestyle') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$lfTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
@@ -429,7 +425,10 @@
             <!-- Category Section -->
             <div class="container">
                 <div class="my-5">
-                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/sports') }}">খেলাধুলা</a></h2>
+                    @if($sportsContentsNew)
+                        @php($spTopContent = $sportsContents->shift())
+                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$spTopContent->category->cat_slug) }}">{{ $spTopContent->category->cat_name }}</a></h2>
+                    @endif
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="p-4 border m-p-o m-border-0">
@@ -512,12 +511,11 @@
 
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/technology') }}">Technology</a></h2>
 
                                     @if($technologyContents)
                                         @php($tecTopContent = $technologyContents->shift())
                                         @php($sURL = fEnURL($tecTopContent->content_id, $tecTopContent->category->cat_slug, ($tecTopContent->subcategory->subcat_slug ?? null), $tecTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$tecTopContent->category->cat_slug) }}">{{ $tecTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($tecTopContent->video_type == 1 && $tecTopContent->video_id)
@@ -545,18 +543,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/technology') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$tecTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/education') }}">Education</a></h2>
 
                                     @if($educationContents)
                                         @php($eduTopContent = $educationContents->shift())
                                         @php($sURL = fEnURL($eduTopContent->content_id, $eduTopContent->category->cat_slug, ($eduTopContent->subcategory->subcat_slug ?? null), $eduTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$eduTopContent->category->cat_slug) }}">{{ $eduTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($eduTopContent->video_type == 1 && $eduTopContent->video_id)
@@ -585,18 +582,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/education') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$eduTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/career') }}">Career</a></h2>
 
                                     @if($careerContents)
                                         @php($careerTopContent = $careerContents->shift())
                                         @php($sURL = fEnURL($careerTopContent->content_id, $careerTopContent->category->cat_slug, ($careerTopContent->subcategory->subcat_slug ?? null), $careerTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$careerTopContent->category->cat_slug) }}">{{ $careerTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($careerTopContent->video_type == 1 && $careerTopContent->video_id)
@@ -625,18 +621,17 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/career') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$careerTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
                             <div class="col-sm-3 mb-5 d-flex">
                                 <div class="border-bottom pb-2 position-relative w-100">
-                                    <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/horoscope') }}">Horoscope</a></h2>
 
                                     @if($horoscopeContents->count() > 0)
                                         @php($horoscTopContent = $horoscopeContents->shift())
                                         @php($sURL = fEnURL($horoscTopContent->content_id, $horoscTopContent->category->cat_slug, ($horoscTopContent->subcategory->subcat_slug ?? null), $horoscTopContent->content_type))
-
+                                        <h2 class="rakSab-common-cat-title"><a href="{{ url('/en/'.$horoscTopContent->category->cat_slug) }}">{{ $horoscTopContent->category->cat_name }}</a></h2>
                                         <a href="{{ $sURL }}" class="link">
                                             <figure class="figure mb-0">
                                                 @if($horoscTopContent->video_type == 1 && $horoscTopContent->video_id)
@@ -665,7 +660,7 @@
                                             </ul>
                                         @endif
 
-                                        <a href="{{ url('/en/horoscope') }}" class="bg-light text-center py-2 text-theme more">More</a>
+                                        <a href="{{ url('/en/'.$horoscTopContent->category->cat_slug) }}" class="bg-light text-center py-2 text-theme more">More</a>
                                     @endif
                                 </div>
                             </div>
