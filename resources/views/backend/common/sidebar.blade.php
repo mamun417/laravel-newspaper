@@ -101,7 +101,7 @@
                     <a href="#"><i class="fa fa-plus-square"></i> All Page</a>
                     <ul class="treeview-menu">
                       <li class="">
-                        <a href="#"><i class="fa fa-file-o"></i> Top Ad</a>
+                        <a href="{{ route('top.ad') }}"><i class="fa fa-file-o"></i> Top Ad</a>
                       </li>
                       <li class="">
                         <a href="#"><i class="fa fa-file-o"></i> Footer Ad</a>
