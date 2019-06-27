@@ -183,7 +183,6 @@ class BnContentController extends Controller
 //        }
 
         $content->content_type = $request->contentType;
-        $content->lead_news = $request->leadNews;
         $content->cat_id = $request->category;
         $content->subcat_id = $request->subCategory;
         $content->special_cat_id = $request->specialCategory;
@@ -401,25 +400,32 @@ class BnContentController extends Controller
         $content->content_type = $request->contentType;
 
         // If Lead News No and Want to Make Yes
-        if ($content->lead_news == 0 AND $request->leadNews == 1){
+        if ($request->leadNews == 1){
             $content_ids = BnContentPosition::select('content_ids')->first();
-            $content_ids = $id.','.$content_ids->content_ids;
-            $content_ids_array = explode(',', $content_ids);
-            $new_content_ids = array_slice($content_ids_array, 0, 6);
-            BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+            $content_ids_check = explode(',', $content_ids->content_ids);
+
+            if (!in_array($id, $content_ids_check)){
+                $content_ids = $id.','.$content_ids->content_ids;
+                $content_ids_array = explode(',', $content_ids);
+                $new_content_ids = array_slice($content_ids_array, 0, 6);
+                BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+            }
         }
 
         // If Lead News Yes and Want to Make No
-        if ($content->lead_news == 1 AND $request->leadNews == 0){
+        if ($request->leadNews == 0){
             $content_ids = BnContentPosition::select('content_ids')->first();
-            $content_ids = $content_ids->content_ids;
-            $content_ids_array = explode(',', $content_ids);
-            $key = array_search($id, $content_ids_array);
-            unset($content_ids_array[$key]);
-            BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$content_ids_array)]);
+            $content_ids_check = explode(',', $content_ids->content_ids);
+
+            if (in_array($id, $content_ids_check)){
+                $content_ids = $content_ids->content_ids;
+                $content_ids_array = explode(',', $content_ids);
+                $key = array_search($id, $content_ids_array);
+                unset($content_ids_array[$key]);
+                BnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$content_ids_array)]);
+            }
         }
 
-        $content->lead_news = $request->leadNews;
         $content->cat_id = $request->category;
         $content->subcat_id = $request->subCategory;
         $content->special_cat_id = $request->specialCategory;
