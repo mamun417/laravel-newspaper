@@ -140,16 +140,19 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('backend/en-survey', 'EnSurveyController');
 
     // Ads Management Routes
-    Route::get('backend/ads/top', 'AdsManagementController@topAd')->name('top.ad');
-    Route::get('backend/ads/footer', 'AdsManagementController@footerAd')->name('footer.ad');
-    Route::get('backend/ads/after-lead-news', 'AdsManagementController@afterLeadNews')->name('after.lead.news');
-    Route::get('backend/ads/before-sports-news', 'AdsManagementController@beforeSportsNews')->name('before.sports.news');
-    Route::get('backend/ads/category-right-top', 'AdsManagementController@categoryRightTop')->name('category.right.top');
-    Route::get('backend/ads/category-right-bottom', 'AdsManagementController@categoryRightBottom')->name('category.right.bottom');
-    Route::get('backend/ads/news-details-right-top', 'AdsManagementController@newsDetailsRightTop')->name('news.details.right.top');
-    Route::get('backend/ads/news-details-right-bottom', 'AdsManagementController@newsDetailsRightBottom')->name('news.details.right.bottom');
+    Route::get('backend/ads/top', 'AdsManagementController@topAds')->name('top_ad');
+    Route::get('backend/ads/footer', 'AdsManagementController@footerAds')->name('footer_ad');
+    Route::get('backend/ads/after-lead-news', 'AdsManagementController@afterLeadNews')->name('after_lead_news');
+    Route::get('backend/ads/before-sports-news', 'AdsManagementController@beforeSportsNews')->name('before_sports_news');
+    Route::get('backend/ads/category-right-top', 'AdsManagementController@categoryRightTop')->name('category_right_top');
+    Route::get('backend/ads/category-right-bottom', 'AdsManagementController@categoryRightBottom')->name('category_right_bottom');
+    Route::get('backend/ads/news-details-right-top', 'AdsManagementController@newsDetailsRightTop')->name('news_details_right_top');
+    Route::get('backend/ads/news-details-right-bottom', 'AdsManagementController@newsDetailsRightBottom')->name('news_details_right_bottom');
 
-    Route::post('backend/ads', 'AdsManagementController@store')->name('ads.store');
+    Route::post('backend/ads/store/{position}', 'AdsManagementController@store')->name('ads.store');
+    Route::get('backend/ads/{position}/edit', 'AdsManagementController@edit')->name('ads.edit');
+    Route::post('backend/ads/{position}', 'AdsManagementController@update')->name('ads.update');
+    Route::delete('backend/ads/{position}', 'AdsManagementController@destroy')->name('ads.destroy');
 });
 
 // En Frontend routes
