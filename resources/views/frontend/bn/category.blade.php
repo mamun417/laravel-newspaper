@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-4 px-2">
-                                <h5 class="py-2 font-weight-bold">
+                                <h5 class="py-2">
                                     <a href="{{ $sURL }}" title="{{ $topCatContent->content_heading }}" class="text-dark">{{ $topCatContent->content_heading }}</a>
                                 </h5>
                                 <p>{{ fGetWord(fFormatString($topCatContent->content_details), 30) }}</p>
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="media-body">
                                         <small class="text-muted small" style="font-size:12px;">{{ fFormatDateEn2Bn(date('d F Y, h:i a', strtotime($content->created_at))) }}</small>
-                                        <h6 class="pt-1 font-weight-bold mb-1">{{ $content->content_heading }}</h6>
+                                        <h6 class="pt-1 mb-1">{{ $content->content_heading }}</h6>
                                     </div>
                                 </a>
                             </div>

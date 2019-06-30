@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <div>
-                        <h2 class="font-weight-bold text-dark m-font-24">
+                        <h2 class="text-dark m-font-24">
                             {{ $detailsContent->content_heading }}
                         </h2>
                         <p class="small text-muted">
@@ -95,7 +95,7 @@
 
                     @if($relatedContents)
                     <div class="shadow-sm rounded mb-4 border-top">
-                        <h6 class="font-weight-bold text-center bg-light m-0 p-3">এই বিভাগের আরো খবর </h6>
+                        <h6 class="text-center bg-light m-0 p-3">এই বিভাগের আরো খবর </h6>
                         <div class="list-group list-group-flush">
 
                             @foreach($relatedContents as $content)
@@ -154,7 +154,7 @@
                                     @endif
                             </figure>
                             <div class="px-3 py-2">
-                                <h6 class="font-weight-bold">{{ $content->content_heading }}</h6>
+                                <h6 class="">{{ $content->content_heading }}</h6>
                             </div>
                         </a>
                     </div>

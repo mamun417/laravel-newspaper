@@ -49,21 +49,21 @@
                     @endphp
                     @foreach($topCategories as $category)
                         <li class="{{ request()->segment(1) == $category->cat_slug ? 'active' : '' }} nav-item">
-                            <a href="{{ url('/'.$category->cat_slug) }}" class="nav-link font-weight-bold">{{ $category->cat_name_bn }}</a>
+                            <a href="{{ url('/'.$category->cat_slug) }}" class="nav-link">{{ $category->cat_name_bn }}</a>
                         </li>
                     @endforeach
 
                 </ul>
                 <ul class="navbar-nav m-border-0 m-mt-0 ml-auto m-pt-0">
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             সকল
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
                                 @foreach($categories as $category)
-                                        <a href="{{ url('/'.$category->cat_slug) }}" class="dropdown-item font-weight-bold col-6 col-sm-2">{{ $category->cat_name_bn }}</a>
+                                        <a href="{{ url('/'.$category->cat_slug) }}" class="dropdown-item col-6 col-sm-2">{{ $category->cat_name_bn }}</a>
                                 @endforeach
                                 </div>
                             </div>
