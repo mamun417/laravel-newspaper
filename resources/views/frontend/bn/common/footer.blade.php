@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+
     <div class="footer-bottom py-3">
         <div class="container">
             <div class="row">
