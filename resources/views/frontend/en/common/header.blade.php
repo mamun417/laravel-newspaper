@@ -159,35 +159,35 @@
 
                 <ul class="navbar-nav m-mb-0">
                     <!--<li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home"></i></a></li>-->
-                    <li class="{{ !request()->segment(1) ? 'active' : '' }} nav-item"><a href="{{ url('/en') }}" class="nav-link font-weight-bold"><i class="fa fa-home"></i></a></li>
+                    <li class="{{ !request()->segment(1) ? 'active' : '' }} nav-item"><a href="{{ url('/en') }}" class="nav-link"><i class="fa fa-home"></i></a></li>
                     @php
                         $categories = enHeaderCategory();
                         $topCategories = $categories->splice(0,12);
                     @endphp
                     @foreach($topCategories as $category)
                         <li class="{{ request()->segment(1) == $category->cat_slug ? 'active' : '' }} nav-item">
-                            <a href="{{ url('/en/'.$category->cat_slug) }}" class="nav-link font-weight-bold">{{ $category->cat_name }}</a>
+                            <a href="{{ url('/en/'.$category->cat_slug) }}" class="nav-link">{{ $category->cat_name }}</a>
                         </li>
                     @endforeach
                 </ul>
 
                 <ul class="navbar-nav m-border-0 m-mt-0 ml-auto m-pt-0">
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             All
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
                                     @foreach($categories as $category)
-                                        <a href="{{ url('/en/'.$category->cat_slug) }}" class="dropdown-item font-weight-bold col-6 col-sm-2">{{ $category->cat_name }}</a>
+                                        <a href="{{ url('/en/'.$category->cat_slug) }}" class="dropdown-item col-6 col-sm-2">{{ $category->cat_name }}</a>
                                     @endforeach
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link font-weight-bold dropdown-toggle search-toggler" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle search-toggler" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-search"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

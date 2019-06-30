@@ -27,8 +27,8 @@ Route::get('/info', function () {
 
 //Auth::routes();
 
-Route::get('dplogin', 'Auth\LoginController@showLoginForm')->name('admin.login');
-Route::post('dplogin', 'Auth\LoginController@login')->name('admin.login.submit');
+Route::get('usa-admin', 'Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('usa-admin', 'Auth\LoginController@login')->name('admin.login.submit');
 Route::post('admin/logout', 'Auth\LoginController@logout')->name('admin.logout');
 
 Route::middleware(['admin'])->group(function () {

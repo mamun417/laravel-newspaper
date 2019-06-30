@@ -28,7 +28,7 @@
                                                     <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $spTopContent->img_bg_path ? asset(config('appconfig.contentImagePath').$spTopContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}" title="{{ $spTopContent->content_heading }}">
                                                 @endif
                                             </figure>
-                                            <h4 class="pt-2 font-weight-bold">{{ $spTopContent->content_heading }}</h4>
+                                            <h4 class="pt-2">{{ $spTopContent->content_heading }}</h4>
                                         </a>
                                         <p class="pt-1 d-none d-sm-block">{{ fGetWord(fFormatString($spTopContent->content_details), 40) }}</p>
                                     </div>
@@ -54,7 +54,7 @@
                                                     </figure>
                                                 </div>
                                                 <div class="media-body">
-                                                    <h6 class="font-weight-bold mb-1">{{ $content->content_heading }}</h6>
+                                                    <h6 class="mb-1">{{ $content->content_heading }}</h6>
                                                 </div>
                                             </a>
                                         </div>
@@ -120,7 +120,7 @@
                                                                         @endif
                                                                     </figure>
                                                                 </a>
-                                                                <h6 class="pt-0 moblie-w-50 font-weight-bold">
+                                                                <h6 class="pt-0 moblie-w-50">
                                                                     <a href="{{ $sURL }}" class="text-dark">{{ $content->content_heading }}</a>
                                                                 </h6>
                                                             </div>
@@ -180,7 +180,7 @@
                                                                         @endif
                                                                     </figure>
                                                                 </a>
-                                                                <h6 class="pt-0 moblie-w-50 font-weight-bold">
+                                                                <h6 class="pt-0 moblie-w-50">
                                                                     <a href="{{ $sURL }}" class="text-dark">{{ $content->content_heading }}</a>
                                                                 </h6>
                                                             </div>
@@ -239,7 +239,7 @@
                                                                         @endif
                                                                     </figure>
                                                                 </a>
-                                                                <h6 class="pt-0 moblie-w-50 font-weight-bold">
+                                                                <h6 class="pt-0 moblie-w-50">
                                                                     <a href="{{ $sURL }}" class="text-dark">{{ $content->content_heading }}</a>
                                                                 </h6>
                                                             </div>
@@ -454,7 +454,7 @@
                                                             @endif
                                                         </figure>
                                                     </a>
-                                                    <h5 class="my-2 font-weight-bold"><a href="" class="text-dark">{{ $spTopContent->content_heading }}</a></h5>
+                                                    <h5 class="my-2"><a href="" class="text-dark">{{ $spTopContent->content_heading }}</a></h5>
                                                     <p>{{ $spTopContent->content_brief }}</p>
                                                 </div>
                                             @endif
@@ -486,7 +486,7 @@
                                                                         @endif
                                                                     </figure>
                                                                 </a>
-                                                                <h6 class="mt-2 font-weight-bold">
+                                                                <h6 class="mt-2">
                                                                     <a href="{{ $sURL }}" class="text-dark">{{ $content->content_heading }}</a>
                                                                 </h6>
                                                             </div>

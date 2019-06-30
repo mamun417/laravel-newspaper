@@ -35,7 +35,7 @@
                                 </figure>
                             </div>
                             <div class="media-body">
-                                <h6 class="font-weight-bold mb-1">{{ $content->content_heading }}</h6>
+                                <h6 class="mb-1">{{ $content->content_heading }}</h6>
                             </div>
                         </a>
 
@@ -67,7 +67,7 @@
                                 </figure>
                             </div>
                             <div class="media-body">
-                                <h6 class="font-weight-bold mb-1">{{ $content->content_heading }}</h6>
+                                <h6 class="mb-1">{{ $content->content_heading }}</h6>
                             </div>
                         </a>
 
