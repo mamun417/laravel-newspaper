@@ -19,7 +19,7 @@
                         <a href="" class="text-white px-2" rel="nofollow" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
                     </div>
                     <div class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
-                        <div class="col-sm-12 text-center mb-5 small">
+                        <div class="col-sm-12 text-center mb-2">
 
                             @php($categories = bnHeaderCategory())
 
@@ -36,7 +36,7 @@
     <div class="footer-bottom py-3">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 text-center small">
+                <div class="col-sm-12 text-center">
                     <div>
                         <i class="fa fa-envelope"></i> সম্পাদক : জুবায়ের আহমদ রাজু, নির্বাহী সম্পাদক : খালেদ মিয়া, প্রকাশক : রুকন হাকিম
                     </div>
