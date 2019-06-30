@@ -28,14 +28,14 @@
             <div class="row">
                 <div class="col-sm-12 text-center small">
                     <div>
-                        <i class="fa fa-envelope"></i> ই-মেইল : abcxyz@gmail.com,
-                        <i class="fa fa-phone"></i> মোবাইল : 01711111111,
-                        <i class="fa fa-map-marker"></i> অফিস : ঢাকা
+                        <i class="fa fa-envelope"></i> সম্পাদক : জুবায়ের আহমদ রাজু, নির্বাহী সম্পাদক : খালেদ মিয়া, প্রকাশক : রুকন হাকিম
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker"></i> Office : 3156 Bainbridge Ave, Bronx, NY 10467
                     </div>
                     <div>
                         <i class="fa fa-copyright"></i> <?php echo date("Y");?> সর্বস্বত্ব সংরক্ষিত | USA Bangla News, উন্নয়নে: <a class="text-white" href="http://www.purpleit.com" target="_blank">Purple IT Ltd.</a>
                     </div>
-                    <p></p>
                 </div>
             </div>
         </div>

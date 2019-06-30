@@ -31,9 +31,10 @@
             <div class="row">
                 <div class="col-sm-12 text-center small">
                     <div>
-                        <i class="fa fa-envelope"></i> E-Mail : abcxyz@gmail.com,
-                        <i class="fa fa-phone"></i> Mobile : 01711111111,
-                        <i class="fa fa-map-marker"></i> Office : Dhaka
+                        <i class="fa fa-envelope"></i> Editor : জুবায়ের আহমদ রাজু, Executive Editor : খালেদ মিয়া, Publisher : রুকন হাকিম
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker"></i> Office : 3156 Bainbridge Ave, Bronx, NY 10467
                     </div>
                     <div>
                         <i class="fa fa-copyright"></i> <?php echo date("Y");?> All Right Reserved | USA Bangla News, Developed by: <a class="text-white" href="http://www.purpleit.com" target="_blank">Purple IT Ltd.</a>
