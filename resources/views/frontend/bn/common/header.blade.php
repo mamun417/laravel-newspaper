@@ -90,4 +90,20 @@
             </div>
         </div>
     </nav>
+
+    @php
+        $top_ads = \App\Http\Controllers\BnHelperController::getAds('top_ad');
+        $footer_ads = \App\Http\Controllers\BnHelperController::getAds('footer_ad');
+        //dd($top_ads)
+    @endphp
+
+    <!--Top Add-->
+    @php( $top_ads = \App\Http\Controllers\BnHelperController::getAds('top_ad') )
+
+    @if($top_ads)
+        <div class="container my-4 text-center">
+            {{ $top_ads }}
+        </div>
+    @endif
+
 </header>

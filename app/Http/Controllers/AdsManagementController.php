@@ -67,62 +67,62 @@ class AdsManagementController extends Controller
                 break;
         }
 
-        return view('backend.add_management.ads_edit', compact('ads', 'ads_heading', 'position'));
+        return view('backend.ads_management.ads_edit', compact('ads', 'ads_heading', 'position'));
     }
 
     public function topAds(){
         $ads = AdsManagement::where('position', 'top_ad')->get();
         $ads_heading = 'Top Ads';
         $ads_position = 'top_ad';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function footerAds(){
         $ads = AdsManagement::where('position', 'footer_ad')->get();
         $ads_heading = 'Footer Ads';
         $ads_position = 'footer_ad';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function afterLeadNews(){
         $ads = AdsManagement::where('position', 'after_lead_news')->get();
         $ads_heading = 'After Lead News Ads';
         $ads_position = 'after_lead_news';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function beforeSportsNews(){
         $ads = AdsManagement::where('position', 'before_sports_news')->get();
         $ads_heading = 'Before Sports News Ads';
         $ads_position = 'before_sports_news';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function categoryRightTop(){
         $ads = AdsManagement::where('position', 'category_right_top')->get();
         $ads_heading = 'Category Right Top Ads';
         $ads_position = 'category_right_top';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function categoryRightBottom(){
         $ads = AdsManagement::where('position', 'category_right_bottom')->get();
         $ads_heading = 'Category Right Bottom Ads';
         $ads_position = 'category_right_bottom';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function newsDetailsRightTop(){
         $ads = AdsManagement::where('position', 'news_details_right_top')->get();
         $ads_heading = 'News Details Right Top Ads';
         $ads_position = 'news_details_right_top';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 
     public function newsDetailsRightBottom(){
         $ads = AdsManagement::where('position', 'news_details_right_bottom')->get();
         $ads_heading = 'News Details Right Bottom Ads';
         $ads_position = 'news_details_right_bottom';
-        return view('backend.add_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
+        return view('backend.ads_management.ads_list', compact('ads', 'ads_heading', 'ads_position'));
     }
 }

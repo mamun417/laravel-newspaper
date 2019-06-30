@@ -94,9 +94,21 @@
                         @endif
                 </div>
                 <div class="col-sm-4">
+
+                    <!--Category Right Top Add-->
+                    <div class="my-4 text-center">
+                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
+                    </div>
+
                     <div class="shadow-sm mb-4 rounded-0 border-top">
                        @include('frontend.bn.layouts.latestPopularBox')
                     </div>
+
+                    <!--Category Right Bottom Add-->
+                    <div class="my-4 text-center">
+                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
+                    </div>
+
                 </div>
             </div>
         </div>

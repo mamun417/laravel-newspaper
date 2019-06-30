@@ -66,8 +66,13 @@
                 <div class="col-sm-3">
                     <!-- Tab links -->
                     @include('frontend.bn.layouts.latestPopularBox')
-
                 </div>
+
+                <!--After Lead News Add-->
+                <div class="container text-center">
+                    <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
+                </div>
+
             </div>
 
             <!-- Category Section -->
@@ -419,6 +424,11 @@
 
                     </div>
                 </div>
+            </div>
+
+            <!--Before Sports News Add-->
+            <div class="container my-4 text-center">
+                <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
             </div>
 
             <div class="container">

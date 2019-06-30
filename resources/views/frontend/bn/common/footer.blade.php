@@ -1,3 +1,8 @@
+<!--Footer Add-->
+<div class="container my-4 text-center">
+    <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
+</div>
+
 <footer class="">
     <div class="pt-5 pb-2">
         <div class="container">

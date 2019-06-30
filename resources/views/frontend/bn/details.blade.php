@@ -83,6 +83,12 @@
                 </div>
 
                 <div class="col-sm-4">
+
+                    <!--News Details Right Top Add-->
+                    <div class="my-4 text-center">
+                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
+                    </div>
+
                     @if($relatedContents)
                     <div class="shadow-sm rounded mb-4 border-top">
                         <h6 class="font-weight-bold text-center bg-light m-0 p-3">এই বিভাগের আরো খবর </h6>
@@ -103,18 +109,17 @@
                     </div>
                     @endif
 
-
-
                     <div class="shadow-sm mb-4 rounded-0 border-top">
                         @include('frontend.bn.layouts.latestPopularBox')
                     </div>
+
+                    <!--News Details Right Bottom Add-->
+                    <div class="my-4 text-center">
+                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
+                    </div>
+
                 </div>
-
-
             </div>
-
-
-
 
             <div class="pt-4">
                 <h2 class="rakSab-common-cat-title"><span>আরও পড়ুন</span></h2>

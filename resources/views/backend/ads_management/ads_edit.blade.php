@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label for="tagName" class="col-sm-2 control-label">Code <span class="required">*</span></label>
                             <div class="col-sm-8">
-                                <input type="text" name="ads_code" class="form-control" id="tagName" value="{{ $ads->ads_code }}" placeholder="Ads code">
+                                <textarea name="ads_code" class="form-control" id="tagName" placeholder="Ads code" rows="5">{{ $ads->ads_code }}</textarea>
                                 @if($errors->has('ads_code')) <span class="text-danger">{{ $errors->first('ads_code') }}</span> @endif
                             </div>
                         </div>

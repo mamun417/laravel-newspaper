@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AdsManagement;
 use App\BnContent;
 use App\BnSubcategory;
 use App\BnSurvey;
@@ -9,6 +10,7 @@ use App\District;
 use App\PhotoAlbum;
 use App\Upozilla;
 use App\Video;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BnHelperController extends Controller
@@ -152,6 +154,18 @@ class BnHelperController extends Controller
 
         return $survey;
 
+    }
+
+    public static function getAds($position){
+
+        $ads = AdsManagement::where('position', $position)
+            ->where('status', 1)
+            ->where('start_date', '<=', Carbon::now())
+            ->where('end_date', '>=', Carbon::now())
+            ->select('ads_code')
+            ->first();
+
+        return $ads['ads_code'];
     }
 
 }
