@@ -1,7 +1,11 @@
 <!--Footer Add-->
-<div class="container my-4 text-center">
-    <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
-</div>
+@php( $ads = \App\Http\Controllers\BnHelperController::getAds('footer_ad') )
+
+@if($ads)
+    <div class="container my-4 text-center">
+        {!! $ads !!}
+    </div>
+@endif
 
 <footer class="">
     <div class="pt-5 pb-2">

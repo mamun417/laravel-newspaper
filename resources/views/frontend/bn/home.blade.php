@@ -69,9 +69,13 @@
                 </div>
 
                 <!--After Lead News Add-->
-                <div class="container text-center">
-                    <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
-                </div>
+                @php( $ads = \App\Http\Controllers\BnHelperController::getAds('after_lead_news') )
+
+                @if($ads)
+                    <div class="container text-center">
+                        {!! $ads !!}
+                    </div>
+                @endif
 
             </div>
 
@@ -427,9 +431,13 @@
             </div>
 
             <!--Before Sports News Add-->
-            <div class="container my-4 text-center">
-                <img class="" src="https://tpc.googlesyndication.com/simgad/11193222596544275777">
-            </div>
+            @php( $ads = \App\Http\Controllers\BnHelperController::getAds('before_sports_news') )
+
+            @if($ads)
+                <div class="container my-4 text-center">
+                    {!! $ads !!}
+                </div>
+            @endif
 
             <div class="container">
                 <div class="my-5">

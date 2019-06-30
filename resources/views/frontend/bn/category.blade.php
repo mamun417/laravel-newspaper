@@ -96,18 +96,26 @@
                 <div class="col-sm-4">
 
                     <!--Category Right Top Add-->
-                    <div class="my-4 text-center">
-                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
-                    </div>
+                    @php( $ads = \App\Http\Controllers\BnHelperController::getAds('category_right_top') )
+
+                    @if($ads)
+                        <div class="container my-4 text-center">
+                            {!! $ads !!}
+                        </div>
+                    @endif
 
                     <div class="shadow-sm mb-4 rounded-0 border-top">
                        @include('frontend.bn.layouts.latestPopularBox')
                     </div>
 
                     <!--Category Right Bottom Add-->
-                    <div class="my-4 text-center">
-                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
-                    </div>
+                    @php( $ads = \App\Http\Controllers\BnHelperController::getAds('category_right_bottom') )
+
+                    @if($ads)
+                        <div class="container my-4 text-center">
+                            {!! $ads !!}
+                        </div>
+                    @endif
 
                 </div>
             </div>

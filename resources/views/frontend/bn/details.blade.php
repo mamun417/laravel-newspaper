@@ -85,9 +85,13 @@
                 <div class="col-sm-4">
 
                     <!--News Details Right Top Add-->
-                    <div class="my-4 text-center">
-                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
-                    </div>
+                    @php( $ads = \App\Http\Controllers\BnHelperController::getAds('news_details_right_top') )
+
+                    @if($ads)
+                        <div class="container my-4 text-center">
+                            {!! $ads !!}
+                        </div>
+                    @endif
 
                     @if($relatedContents)
                     <div class="shadow-sm rounded mb-4 border-top">
@@ -114,10 +118,13 @@
                     </div>
 
                     <!--News Details Right Bottom Add-->
-                    <div class="my-4 text-center">
-                        <img class="" src="https://www.jonotarkotha.com/np-uploads/advertisement/walton.png">
-                    </div>
+                    @php( $ads = \App\Http\Controllers\BnHelperController::getAds('news_details_right_bottom') )
 
+                    @if($ads)
+                        <div class="container my-4 text-center">
+                            {!! $ads !!}
+                        </div>
+                    @endif
                 </div>
             </div>
 
