@@ -94,7 +94,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Ads Code</th>
+                                <th style="width: 60%;">Ads Code</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Status</th>
