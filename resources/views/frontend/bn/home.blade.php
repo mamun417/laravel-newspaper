@@ -6,62 +6,62 @@
 
     <div class="main-content">
         <div class="container my-4">
-            {{-- Marquee/scroll news --}}
-            @include('frontend.bn.common.breaking-marquee')
-            <!-- Top Section -->
+        {{-- Marquee/scroll news --}}
+        @include('frontend.bn.common.breaking-marquee')
+        <!-- Top Section -->
             <div class="row marginBottom50">
                 <div class="col-sm-9 mb-3">
                     @if($specialTopContents)
-                    <div class="row mx-n2">
-                        @php($spTopContent = $specialTopContents->shift())
-                        <div class="col-sm-8 pl-2">
-                            @if($spTopContent)
+                        <div class="row mx-n2">
+                            @php($spTopContent = $specialTopContents->shift())
+                            <div class="col-sm-8 pl-2">
+                                @if($spTopContent)
 
-                                @php($sURL = fDesktopURL($spTopContent->content_id, $spTopContent->category->cat_slug, ($spTopContent->subcategory->subcat_slug ?? null), $spTopContent->content_type))
+                                    @php($sURL = fDesktopURL($spTopContent->content_id, $spTopContent->category->cat_slug, ($spTopContent->subcategory->subcat_slug ?? null), $spTopContent->content_type))
 
-                                <div class="position-relative mb-3 pb-4 mLead">
-                                    <a href="{{ $sURL }}" title="{{ $spTopContent->content_heading }}" class="text-dark link">
-                                    <figure class="figure mb-0">
-                                        @if($spTopContent->video_type == 1 && $spTopContent->video_id)
-                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $spTopContent->video_id }}/hqdefault.jpg" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}">
-                                        @else
-                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $spTopContent->img_bg_path ? asset(config('appconfig.contentImagePath').$spTopContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}" title="{{ $spTopContent->content_heading }}">
-                                        @endif
-                                    </figure>
-                                    <h4 class="pt-2">{{ $spTopContent->content_heading }}</h4>
-                                </a>
-                                <p class="pt-1 d-none d-sm-block">{{ fGetWord(fFormatString($spTopContent->content_details), 40) }}</p>
-                            </div>
-                            @endif
-                        </div>
-                        @endif
-
-                        @php($spTopRightTwoContents = $specialTopContents->splice(0,5))
-                        <div class="col-sm-4 px-1">
-                            @if($spTopRightTwoContents->count() > 0)
-                                @foreach($spTopRightTwoContents as $content)
-                                    @php($sURL = fDesktopURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
-
-                                    <div class="list-unstyled">
-                                        <a href="{{ $sURL }}" title="{{ $content->content_heading }}" class="media mb-2 pb-2 border-bottom text-dark link">
-                                        <div class="w-50 mr-2">
+                                    <div class="position-relative mb-3 pb-4 mLead">
+                                        <a href="{{ $sURL }}" title="{{ $spTopContent->content_heading }}" class="text-dark link">
                                             <figure class="figure mb-0">
-                                                @if($content->video_type == 1 && $content->video_id)
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/mqdefault.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
+                                                @if($spTopContent->video_type == 1 && $spTopContent->video_id)
+                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $spTopContent->video_id }}/hqdefault.jpg" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}">
                                                 @else
-                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_bg_path ? asset(config('appconfig.contentImagePath').$content->img_sm_path) : asset(config('appconfig.commonImagePath').'sm-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
+                                                    <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $spTopContent->img_bg_path ? asset(config('appconfig.contentImagePath').$spTopContent->img_bg_path) : asset(config('appconfig.commonImagePath').'bg-default.jpg') }}" class="lazyload img-responsive" alt="{{ $spTopContent->content_heading }}" title="{{ $spTopContent->content_heading }}">
                                                 @endif
                                             </figure>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="mb-1">{{ $content->content_heading }}</h6>
-                                        </div>
+                                            <h4 class="pt-2">{{ $spTopContent->content_heading }}</h4>
                                         </a>
+                                        <p class="pt-1 d-none d-sm-block">{{ fGetWord(fFormatString($spTopContent->content_details), 40) }}</p>
                                     </div>
-                                @endforeach
+                                @endif
+                            </div>
                             @endif
+
+                            @php($spTopRightTwoContents = $specialTopContents->splice(0,5))
+                            <div class="col-sm-4 px-1">
+                                @if($spTopRightTwoContents->count() > 0)
+                                    @foreach($spTopRightTwoContents as $content)
+                                        @php($sURL = fDesktopURL($content->content_id, $content->category->cat_slug, ($content->subcategory->subcat_slug ?? null), $content->content_type))
+
+                                        <div class="list-unstyled">
+                                            <a href="{{ $sURL }}" title="{{ $content->content_heading }}" class="media mb-2 pb-2 border-bottom text-dark link">
+                                                <div class="w-50 mr-2">
+                                                    <figure class="figure mb-0">
+                                                        @if($content->video_type == 1 && $content->video_id)
+                                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="https://img.youtube.com/vi/{{ $content->video_id }}/mqdefault.jpg" class="lazyload img-responsive" alt="{{ $content->content_heading }}">
+                                                        @else
+                                                            <img src="{{ asset(config('appconfig.lazyloaderPath')) }}" data-src="{{ $content->img_bg_path ? asset(config('appconfig.contentImagePath').$content->img_sm_path) : asset(config('appconfig.commonImagePath').'sm-default.jpg') }}"  class="lazyload img-responsive" alt="{{ $content->content_heading }}" title="{{ $content->content_heading }}">
+                                                        @endif
+                                                    </figure>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">{{ $content->content_heading }}</h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
                         </div>
-                    </div>
                 </div>
                 <div class="col-sm-3">
                     <!-- Tab links -->

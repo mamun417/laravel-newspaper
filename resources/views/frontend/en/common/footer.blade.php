@@ -7,10 +7,10 @@
             <div class="finar">
                 <div class="row">
                     <div class="col-sm-12 text-center mb-4">
-                        <a href="" class="text-white px-2" rel="nofollow" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/Usabanglatvcom-224436571683185/" class="text-white px-2" rel="nofollow" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
                         <a href="" class="text-white px-2" rel="nofollow" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
                         <a href="" class="text-white px-2" rel="nofollow" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
-                        <a href="" class="text-white px-2" rel="nofollow" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+
                     </div>
                     <div class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
                         <div class="col-sm-12 text-center mb-5">
@@ -31,7 +31,9 @@
             <div class="row">
                 <div class="col-sm-12 text-center">
                     <div>
-                        <i class="fa fa-envelope"></i> Editor : জুবায়ের আহমদ রাজু, Executive Editor : খালেদ মিয়া, Publisher : রুকন হাকিম
+                        <i class="fa fa-user"></i> Editor : জুবায়ের আহমদ রাজু, Executive Editor : খালেদ মিয়া, Publisher : রুকন হাকিম
+                        <br><i class="fa fa-envelope"></i> Email : info@usabanglanews.com,
+                        <i class="fa fa-phone"></i> Contact : 929-408-3529
                     </div>
                     <div>
                         <i class="fa fa-map-marker"></i> Office : 3156 Bainbridge Ave, Bronx, NY 10467

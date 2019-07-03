@@ -160,8 +160,8 @@ class BnHelperController extends Controller
 
         $ads = AdsManagement::where('position', $position)
             ->where('status', 1)
-            ->where('start_date', '<=', Carbon::now())
-            ->where('end_date', '>=', Carbon::now())
+            ->where('start_date', '<=', Carbon::today())
+            ->where('end_date', '>=', Carbon::today())
             ->select('ads_code')
             ->first();
 

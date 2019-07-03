@@ -14,15 +14,15 @@
                             $bnDate=$bn->get_date();
                             $enDate = $bn->fFormatDate(date('l, d F Y'));
                         @endphp
-                        <i class="fa fa-map-marker"></i> ঢাকা &nbsp;
+                        <i class="fa fa-map-marker"></i> আমেরিকা &nbsp;
                         <i class="fa fa-calendar"></i> {{ $enDate }} | {{ $bnDate[0]." ".$bnDate[1]." ".$bnDate[2] }}
                     </div>
                 </div>
                 <div>
-                    <a href="" class="text-dark px-2" rel="nofollow" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/Usabanglatvcom-224436571683185/" class="text-dark px-2" rel="nofollow" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
                     <a href="" class="text-dark px-2" rel="nofollow" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
                     <a href="" class="text-dark px-2" rel="nofollow" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
-                    <a href="" class="text-dark px-2" rel="nofollow" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+
                     <a href="{{ url('/archive') }}" class="text-dark ml-5"><i class="fa fa-database"></i> আর্কাইভ</a>
                     <a href="{{ url('/en') }}" class="text-dark ml-5 btn btn-outline-success hover_cw"><i class="fa fa-language" aria-hidden="true"></i> English</a>
                 </div>
@@ -62,9 +62,9 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <div class="container">
                                 <div class="row">
-                                @foreach($categories as $category)
+                                    @foreach($categories as $category)
                                         <a href="{{ url('/'.$category->cat_slug) }}" class="dropdown-item col-6 col-sm-2">{{ $category->cat_name_bn }}</a>
-                                @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
