@@ -154,8 +154,8 @@
 							<label for="leadNews" class="col-sm-3">Lead News </label>
 							<div class="col-sm-9">
 								<select name="leadNews" class="form-control" id="leadNews">
-									<option value="0"{{ $content->lead_news == 0 ? ' selected' : '' }}>No</option>
-									<option value="1"{{ $content->lead_news == 1 ? ' selected' : '' }}>Yes</option>
+									<option value="0">No</option>
+									<option value="1"{{ in_array($content->content_id, $lead_news_ids)?' selected' : '' }}>Yes</option>
 								</select>
 							</div>
 						</div>

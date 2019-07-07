@@ -283,7 +283,11 @@ class BnContentController extends Controller
         //return $categories;
         //dd($content->toArray());
 
-        return view('backend.bn.content.content_edit', compact('content', 'authors', 'categories', 'specialCategories', 'countries', 'districts', 'mis_uploaders', 'normaltag_list', 'peopletag_list', 'placetag_list'));
+        // To selected lead news
+        $bn_content_position = BnContentPosition::select('content_ids')->first();
+        $lead_news_ids = explode(',', $bn_content_position->content_ids);
+
+        return view('backend.bn.content.content_edit', compact('content', 'authors', 'categories', 'specialCategories', 'countries', 'districts', 'mis_uploaders', 'normaltag_list', 'peopletag_list', 'placetag_list', 'lead_news_ids'));
     }
 
     public function update(Request $request, $id)

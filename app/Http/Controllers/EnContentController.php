@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BnContentPosition;
 use App\Country;
 use App\District;
 use App\EnAuthor;
@@ -220,7 +221,7 @@ class EnContentController extends Controller
             $content_ids = $news_id.','.$content_ids->content_ids;
             $content_ids_array = explode(',', $content_ids);
             $new_content_ids = array_slice($content_ids_array, 0, 6);
-            EnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+            EnContentPosition::where('position_id', 3)->update(['content_ids' => implode(',',$new_content_ids)]);
         }
 
 
@@ -264,7 +265,11 @@ class EnContentController extends Controller
             }
         }
 
-        return view('backend.en.content.en_content_edit', compact('content', 'authors', 'categories', 'specialCategories', 'countries', 'districts', 'mis_uploaders', 'normaltag_list'));
+        // To selected lead news
+        $bn_content_position = EnContentPosition::select('content_ids')->first();
+        $lead_news_ids = explode(',', $bn_content_position->content_ids);
+
+        return view('backend.en.content.en_content_edit', compact('content', 'authors', 'categories', 'specialCategories', 'countries', 'districts', 'mis_uploaders', 'normaltag_list', 'lead_news_ids'));
     }
 
     public function update(Request $request, $id)
@@ -319,7 +324,7 @@ class EnContentController extends Controller
                 $content_ids = $id.','.$content_ids->content_ids;
                 $content_ids_array = explode(',', $content_ids);
                 $new_content_ids = array_slice($content_ids_array, 0, 6);
-                EnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$new_content_ids)]);
+                EnContentPosition::where('position_id', 3)->update(['content_ids' => implode(',',$new_content_ids)]);
             }
         }
 
@@ -333,7 +338,7 @@ class EnContentController extends Controller
                 $content_ids_array = explode(',', $content_ids);
                 $key = array_search($id, $content_ids_array);
                 unset($content_ids_array[$key]);
-                EnContentPosition::where('position_id', 1)->update(['content_ids' => implode(',',$content_ids_array)]);
+                EnContentPosition::where('position_id', 3)->update(['content_ids' => implode(',',$content_ids_array)]);
             }
         }
 
